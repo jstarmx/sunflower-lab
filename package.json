@@ -1,0 +1,36 @@
+{
+  "name": "sunflower-lab",
+  "version": "0.1.0",
+  "description": "Sunflower Lab Styles and Components",
+  "main": "index.js",
+  "repository": "git@github.com:jstarmx/sunflower-lab.git",
+  "author": "jstarmx <jstar.mx@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "webpack": "^4.30.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-typescript": "^7.3.3",
+    "@storybook/react": "^5.0.11",
+    "babel-jest": "^24.7.1",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-plugin-emotion": "^10.0.7",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "husky": "^2.2.0",
+    "jest": "^24.7.1",
+    "jest-dom": "^3.1.4",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.17.0",
+    "react-testing-library": "^7.0.0"
+  }
+}
