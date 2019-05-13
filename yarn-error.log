@@ -1,5 +1,5 @@
 Arguments: 
-  /home/jstarmx/.nvm/versions/node/v10.7.0/bin/node /usr/share/yarn/bin/yarn.js add -D @babel/preset-typescript source-map-loader
+  /home/jstarmx/.nvm/versions/node/v10.7.0/bin/node /usr/share/yarn/bin/yarn.js add @types/react@16.8.15
 
 PATH: 
   /home/jstarmx/bin:/home/jstarmx/.local/bin:/home/jstarmx/.nvm/versions/node/v10.7.0/bin:/home/jstarmx/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Windows/System32/OpenSSH:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Users/jstar/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/jstar/AppData/Local/hyper/app-2.1.2/resources/bin:/mnt/c/Program\ Files/Docker/Docker/resources/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: ENOENT: no such file or directory, scandir '/mnt/c/Users/jstar/code/sunflower-lab/node_modules/@storybook/components/src/syntaxhighlighter/__snapshots__'
+  Error: ENOENT: no such file or directory, scandir '/mnt/c/Users/jstar/code/sunflower-lab/node_modules/has-ansi/node_modules'
 
 npm manifest: 
   {
