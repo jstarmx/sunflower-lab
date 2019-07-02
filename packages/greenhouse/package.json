@@ -1,6 +1,30 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
+  "name": "@sunflowerlab/greenhouse",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "rollup -c",
+    "autobuild": "rollup -c -w",
+    "dev": "run-p start:dev autobuild",
+    "start": "sirv public --single",
+    "start:dev": "sirv public --single --dev",
+    "storybook": "start-storybook",
+    "lint": "eslint ./",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "./node_modules/.bin/eslint ./ --fix",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "sirv-cli": "^0.4.4",
+    "typescript": "^3.5.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-typescript": "^7.3.3",
@@ -25,18 +49,5 @@
     "svelte": "^3.0.0",
     "svelte-loader": "^2.13.4",
     "tslib": "^1.10.0"
-  },
-  "dependencies": {
-    "sirv-cli": "^0.4.4",
-    "typescript": "^3.5.2"
-  },
-  "scripts": {
-    "build": "rollup -c",
-    "autobuild": "rollup -c -w",
-    "dev": "run-p start:dev autobuild",
-    "start": "sirv public --single",
-    "start:dev": "sirv public --single --dev",
-    "storybook": "start-storybook",
-    "lint": "eslint ./"
   }
 }
