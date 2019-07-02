@@ -8,8 +8,12 @@
     "start": "sirv public --single",
     "start:dev": "sirv public --single --dev",
     "storybook": "start-storybook",
-    "lint": "eslint ./",
-    "precommit": "lint-staged"
+    "lint": "eslint ./"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.js": [
