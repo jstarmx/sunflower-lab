@@ -1,5 +1,6 @@
 <script>
+  export let placeholder;
   export let type;
 </script>
 
-<input type={type} />
+<input {placeholder} {type} />

@@ -8,7 +8,8 @@
     "start": "sirv public --single",
     "start:dev": "sirv public --single --dev",
     "storybook": "start-storybook",
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "check-types": "tsc --project ./tsconfig.json --noEmit"
   },
   "husky": {
     "hooks": {
@@ -26,13 +27,13 @@
     ]
   },
   "dependencies": {
+    "@storybook/svelte": "^5.1.9",
     "sirv-cli": "^0.4.4",
     "typescript": "^3.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-typescript": "^7.3.3",
-    "@storybook/svelte": "^5.1.9",
     "babel-loader": "^8.0.6",
     "eslint": "^6.0.1",
     "eslint-config-airbnb-base": "^13.2.0",
