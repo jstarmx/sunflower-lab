@@ -1,5 +1,5 @@
 {
-  "plugins": ["prettier"],
+  "plugins": ["prettier", "svelte3"],
   "extends": ["airbnb-base", "prettier"],
   "env": {
     "browser": true,
@@ -9,5 +9,11 @@
   },
   "rules": {
     "prettier/prettier": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.svelte"],
+      "processor": "svelte3/svelte3"
+    }
+  ]
 }
