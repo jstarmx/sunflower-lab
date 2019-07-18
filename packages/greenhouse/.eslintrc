@@ -1,6 +1,5 @@
 {
-  "plugins": ["prettier", "svelte3"],
-  "extends": ["airbnb-base", "prettier"],
+  "extends": ["airbnb-base"],
   "env": {
     "browser": true,
     "node": true,
@@ -8,12 +7,24 @@
     "es6": true
   },
   "rules": {
-    "prettier/prettier": "error"
+    "import/prefer-default-export": "off"
   },
   "overrides": [
     {
       "files": ["*.svelte"],
-      "processor": "svelte3/svelte3"
+      "processor": "svelte3/svelte3",
+      "plugins": ["svelte3"],
+      "rules": {
+        "import/no-mutable-exports": "off"
+      }
+    },
+    {
+      "files": ["*.js", "*.ts"],
+      "plugins": ["import", "prettier"],
+      "extends": ["prettier"],
+      "rules": {
+        "prettier/prettier": "error"
+      }
     }
   ]
 }
