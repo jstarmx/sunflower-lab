@@ -1,6 +1,7 @@
 import { css } from 'emotion';
 
+import { baseUnit } from './settings';
+
 export const input = css`
-  padding: 8px 16px;
-  font-size: 16px;
+  padding: ${baseUnit}px ${baseUnit * 2}px;
 `;
