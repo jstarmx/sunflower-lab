@@ -1,4 +1,5 @@
 import { configure } from '@storybook/svelte';
+import '../public/vars.css';
 import '../public/global.css';
 
 function loadStories() {

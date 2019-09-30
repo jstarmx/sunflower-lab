@@ -1,15 +1,14 @@
 <script>
-  import { input } from '../../styles/forms.ts';
-
   export let placeholder;
   export let type;
 </script>
 
 <style>
   input {
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    border-radius: var(--unit);
+    border: 1px solid var(--neutral);
+    padding: var(--unit-x2) var(--unit-x3);
   }
 </style>
 
-<input {placeholder} {type} class={input} />
+<input {placeholder} {type} />

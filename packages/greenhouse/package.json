@@ -28,7 +28,6 @@
   },
   "dependencies": {
     "@storybook/svelte": "^5.1.9",
-    "emotion": "^10.0.14",
     "sirv-cli": "^0.4.4",
     "typescript": "^3.5.2"
   },
