@@ -6,7 +6,8 @@
 <style>
   input {
     border-radius: var(--unit);
-    border: 1px solid var(--neutral);
+    border: 1px solid var(--primary);
+    color: var(--primary);
     padding: var(--unit-x2) var(--unit-x3);
   }
 </style>
