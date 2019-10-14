@@ -1,0 +1,65 @@
+{
+  "name": "@sunflowerlab/greenhouse",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "rollup -c",
+    "autobuild": "rollup -c -w",
+    "dev": "run-p start:dev autobuild",
+    "start": "sirv public --single",
+    "start:dev": "sirv public --single --dev",
+    "storybook": "start-storybook",
+    "build-storybook": "build-storybook -c .storybook -o docs",
+    "lint": "eslint ./ --ext .js,.svelte && tslint -c tslint.json 'src/**/*.ts'",
+    "check-types": "tsc --project ./tsconfig.json --noEmit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "./node_modules/.bin/eslint ./ --fix",
+      "git add"
+    ],
+    "*.{json,md,svelte}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "babel-loader": "^8.0.6",
+    "rollup": "^1.10.1",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-svelte": "^5.0.3",
+    "rollup-plugin-terser": "^4.0.4",
+    "rollup-plugin-typescript": "^1.0.1",
+    "svelte": "^3.0.0",
+    "svelte-loader": "^2.13.4",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.2"
+  },
+  "devDependencies": {
+    "@storybook/svelte": "^5.2.4",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-svelte3": "^2.6.0",
+    "husky": "^3.0.0",
+    "lint-staged": "^9.0.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "prettier-plugin-svelte": "^0.7.0",
+    "sirv-cli": "^0.4.4",
+    "storybook": "^5.1.11",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1"
+  }
+}
