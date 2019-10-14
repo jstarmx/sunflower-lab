@@ -7,33 +7,29 @@
   .button {
     background-color: var(--primary);
     box-shadow: 0 var(--unit) 0 0 var(--primary-dark);
-    border-radius: var(--unit);
+    border-radius: var(--unit-x2);
     border: none;
-    color: var(--white);
     cursor: pointer;
     padding: var(--unit-x2) var(--unit-x3);
+    position: relative;
+    box-shadow: 0 var(--unit) 0 0 var(--primary-dark);
   }
 
   .button:active {
     transform: translateY(var(--unit));
+    box-shadow: 0 calc(-1 * var(--unit)) 0 0 var(--primary-dark);
   }
 
   .button--primary {
     background-color: var(--primary);
-    box-shadow: 0 var(--unit) 0 0 var(--primary-dark);
-  }
-
-  .button--primary:active {
-    box-shadow: 0 calc(-1 * var(--unit)) 0 0 var(--primary-dark);
+    color: var(--white);
   }
 
   .button--secondary {
-    background-color: var(--secondary);
-    box-shadow: 0 var(--unit) 0 0 var(--secondary-dark);
-  }
-
-  .button--secondary:active {
-    box-shadow: 0 calc(-1 * var(--unit)) 0 0 var(--secondary-dark);
+    background-color: var(--white);
+    border: var(--unit) solid var(--primary);
+    color: var(--primary);
+    padding: var(--unit) var(--unit-x2);
   }
 </style>
 
