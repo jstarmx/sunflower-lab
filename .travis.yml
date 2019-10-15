@@ -2,4 +2,12 @@ language: node_js
 node_js:
   - 12
 before_install: cd packages/greenhouse
-script: build-storybook -c .storybook -o ../../docs
+script: build-storybook -c .storybook -o .out
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: .out
+  on:
+    branch: master
