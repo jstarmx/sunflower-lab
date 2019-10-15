@@ -8,7 +8,6 @@
     "start": "sirv public --single",
     "start:dev": "sirv public --single --dev",
     "storybook": "start-storybook",
-    "build-storybook": "build-storybook -c .storybook -o docs",
     "lint": "eslint ./ --ext .js,.svelte && tslint -c tslint.json 'src/**/*.ts'",
     "check-types": "tsc --project ./tsconfig.json --noEmit"
   },
