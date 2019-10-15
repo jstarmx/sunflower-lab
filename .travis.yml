@@ -8,6 +8,6 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
-  local_dir: .out
+  local_dir: packages/greenhouse/.out
   on:
     branch: master
