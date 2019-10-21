@@ -1,6 +1,9 @@
 <script>
   export let label;
   export let type;
+
+  const classModifer =
+    type === 'secondary' ? 'button--secondary' : 'button--primary';
 </script>
 
 <style>
@@ -33,8 +36,4 @@
   }
 </style>
 
-{#if type === 'secondary'}
-  <button type="button" class="button button--secondary">{label}</button>
-{:else}
-  <button type="button" class="button button--primary">{label}</button>
-{/if}
+<button type="button" class="button {classModifer}">{label}</button>
