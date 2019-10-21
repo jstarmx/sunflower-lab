@@ -1,0 +1,14 @@
+{
+    "test": {
+        "awscloudformation": {
+            "AuthRoleName": "weathervane-test-20191018133736-authRole",
+            "UnauthRoleArn": "arn:aws:iam::403242703285:role/weathervane-test-20191018133736-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::403242703285:role/weathervane-test-20191018133736-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "weathervane-test-20191018133736-deployment",
+            "UnauthRoleName": "weathervane-test-20191018133736-unauthRole",
+            "StackName": "weathervane-test-20191018133736",
+            "StackId": "arn:aws:cloudformation:eu-west-1:403242703285:stack/weathervane-test-20191018133736/0d087760-f1a4-11e9-834d-02135cc8443e"
+        }
+    }
+}
