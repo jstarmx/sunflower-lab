@@ -5,10 +5,15 @@ import PubSub from '@aws-amplify/pubsub';
 import { createTodo } from './src/graphql/mutations';
 import { listTodos } from './src/graphql/queries';
 import { onCreateTodo } from './src/graphql/subscriptions';
+import Analytics from '@aws-amplify/analytics';
+import PushNotification from '@aws-amplify/pushnotification';
 
 import config from './aws-exports'
+
 API.configure(config)             // Configure Amplify
 PubSub.configure(config)
+Analytics.configure(config);
+PushNotification.configure(config);
 
 async function createNewTodo() {
   const todo = { name: "Use AppSync" , description: "Realtime and Offline"}

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "524198381712",
+    "firebase_url": "https://weather-vane-296e7.firebaseio.com",
+    "project_id": "weather-vane-296e7",
+    "storage_bucket": "weather-vane-296e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524198381712:android:7ab1c9c3d26c81b0bfb015",
+        "android_client_info": {
+          "package_name": "com.sunflowerlab.weathervane"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524198381712-0aqk381ers4bensvlaguih6ba99pq5ou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2F-KGMBIc2RaYlZiSmGywAEtgVp_VYVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524198381712-0aqk381ers4bensvlaguih6ba99pq5ou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
