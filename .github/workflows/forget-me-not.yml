@@ -18,6 +18,7 @@ jobs:
         node-version: 12.x
     - name: npm install and build
       run: |
+        cd apps/forget-me-not
         npm ci
         npm run export
     - name: deploy to firebase
