@@ -1,6 +1,6 @@
 {
   "name": "Forget-me-not",
-  "description": "TODO",
+  "description": "",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
