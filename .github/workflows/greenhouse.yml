@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'packages/greenhouse/**'
+    - '.github/workflows/greenhouse.yml'
 
 jobs:
   build:
@@ -22,5 +23,5 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.GITHUB_PAGES_TOKEN }}
         BASE_BRANCH: master
         BRANCH: gh-pages
-        FOLDER: packages/greenhouse/.out
+        FOLDER: .out
         BUILD_SCRIPT: cd packages/greenhouse && npm ci && npm run storybook:build
