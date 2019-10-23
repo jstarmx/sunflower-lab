@@ -1,0 +1,27 @@
+name: Greenhouse
+
+on:
+  push:
+    paths:
+    - 'packages/greenhouse/**'
+    - '.github/workflows/greenhouse.yml'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.GITHUB_PAGES_TOKEN }}
+        BASE_BRANCH: master
+        BRANCH: gh-pages
+        FOLDER: packages/greenhouse/.out
+        BUILD_SCRIPT: cd packages/greenhouse && npm ci && build-storybook -c .storybook -o .out
