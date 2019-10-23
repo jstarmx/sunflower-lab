@@ -17,11 +17,15 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-    - name: Build and Deploy
+    - name: npm install and build
+      working-directory: packages/greenhouse
+      run: |
+        npm ci
+        npm run storybook:build
+    - name: deploy to pages
       uses: JamesIves/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.GITHUB_PAGES_TOKEN }}
         BASE_BRANCH: master
         BRANCH: gh-pages
-        FOLDER: github/workspace/packages/greenhouse/.out
-        BUILD_SCRIPT: cd packages/greenhouse && npm ci && npm run storybook:build
+        FOLDER: packages/greenhouse/.out
