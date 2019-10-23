@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'apps/forget-me-not/**'
+    - '.github/workflows/forget-me-not.yml'
 
 jobs:
   build:
