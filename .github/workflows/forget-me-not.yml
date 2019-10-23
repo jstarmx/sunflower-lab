@@ -17,11 +17,12 @@ jobs:
       with:
         node-version: 12.x
     - name: npm install and build
+      working-directory: apps/forget-me-not
       run: |
-        cd apps/forget-me-not
         npm ci
         npm run export
     - name: deploy to firebase
+      working-directory: apps/forget-me-not
       run: |
         npm install -g firebase-tools
         firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
