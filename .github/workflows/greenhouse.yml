@@ -24,4 +24,4 @@ jobs:
         BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: packages/greenhouse/.out
-        BUILD_SCRIPT: cd packages/greenhouse && npm ci && npm run storybook:build & cd ../../
+        BUILD_SCRIPT: cd packages/greenhouse && npm ci && npm run storybook:build
