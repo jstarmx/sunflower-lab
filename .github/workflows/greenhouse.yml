@@ -23,5 +23,5 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.GITHUB_PAGES_TOKEN }}
         BASE_BRANCH: master
         BRANCH: gh-pages
-        FOLDER: packages/greenhouse/.out
+        FOLDER: /github/workspace/packages/greenhouse/.out
         BUILD_SCRIPT: cd packages/greenhouse && npm ci && npm run storybook:build
