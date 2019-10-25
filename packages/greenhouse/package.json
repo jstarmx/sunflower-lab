@@ -12,6 +12,9 @@
     "lint": "eslint ./ --ext .js,.svelte && tslint -c tslint.json 'src/**/*.ts'",
     "check-types": "tsc --project ./tsconfig.json --noEmit"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
