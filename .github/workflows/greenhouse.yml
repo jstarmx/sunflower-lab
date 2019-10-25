@@ -4,20 +4,13 @@ on:
   push:
     paths:
     - 'packages/greenhouse/**'
-    - '.github/workflows/greenhouse.yml'
+    # - '.github/workflows/greenhouse.yml'
 
-jobs:
-  build:
-
+jobs:   
+  storybook:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-    - name: npm install and build
+    - name: build storybook
       working-directory: packages/greenhouse
       run: |
         npm ci
@@ -29,3 +22,20 @@ jobs:
         BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: packages/greenhouse/.out
+  
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
+          scope: '@jstarmx'
+      - name: publish to packages
+        working-directory: packages/greenhouse
+        run: |
+          npm ci
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
