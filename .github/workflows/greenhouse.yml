@@ -4,7 +4,7 @@ on:
   push:
     paths:
     - 'packages/greenhouse/**'
-    # - '.github/workflows/greenhouse.yml'
+    - '.github/workflows/greenhouse.yml'
 
 jobs:   
   storybook:
@@ -35,7 +35,10 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm publish
+      - name: publish to npm
+        working-directory: packages/greenhouse
+        run: |
+          npm ci
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
