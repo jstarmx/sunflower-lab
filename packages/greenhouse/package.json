@@ -1,5 +1,5 @@
 {
-  "name": "@jstarmx/greenhouse",
+  "name": "@sunflowerlab/greenhouse",
   "version": "0.1.0",
   "scripts": {
     "build": "rollup -c",
@@ -12,8 +12,9 @@
     "lint": "eslint ./ --ext .js,.svelte && tslint -c tslint.json 'src/**/*.ts'",
     "check-types": "tsc --project ./tsconfig.json --noEmit"
   },
+  "repository": "git://github.com/jstarmx/sunflower-lab",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://registry.npmjs.org"
   },
   "husky": {
     "hooks": {
