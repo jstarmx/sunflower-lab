@@ -34,12 +34,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          registry-url: https://npm.pkg.github.com/
-          scope: '@jstarmx'
-      - name: publish to packages
-        working-directory: packages/greenhouse
-        run: |
-          npm ci
-          npm publish
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
