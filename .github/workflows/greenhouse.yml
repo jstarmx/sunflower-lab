@@ -39,6 +39,6 @@ jobs:
         working-directory: packages/greenhouse
         run: |
           npm ci
-          npm publish
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
