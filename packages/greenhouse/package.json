@@ -1,5 +1,5 @@
 {
-  "name": "@sunflowerlab/greenhouse",
+  "name": "@jstarmx/greenhouse",
   "version": "0.1.0",
   "scripts": {
     "build": "rollup -c",
