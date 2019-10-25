@@ -1,12 +1,8 @@
 {
   "name": "@sunflowerlab/greenhouse",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scripts": {
-    "build": "rollup -c",
-    "autobuild": "rollup -c -w",
-    "dev": "run-p start:dev autobuild",
-    "start": "sirv public --single",
-    "start:dev": "sirv public --single --dev",
+    "build": "node ./scripts/build.js",
     "storybook": "start-storybook",
     "storybook:build": "build-storybook -c .storybook -o .out",
     "lint": "eslint ./ --ext .js,.svelte && tslint -c tslint.json 'src/**/*.ts'",
@@ -55,6 +51,7 @@
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-svelte3": "^2.6.0",
+    "glob": "^7.1.5",
     "husky": "^3.0.0",
     "lint-staged": "^9.0.1",
     "npm-run-all": "^4.1.5",

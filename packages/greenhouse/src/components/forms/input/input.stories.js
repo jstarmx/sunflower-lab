@@ -1,4 +1,4 @@
-import Input from './input.svelte';
+import Input from './Input.svelte';
 
 export default { title: 'Input' };
 

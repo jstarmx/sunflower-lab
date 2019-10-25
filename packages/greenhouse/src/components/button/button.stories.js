@@ -1,4 +1,4 @@
-import Button from './button.svelte';
+import Button from './Button.svelte';
 
 export default { title: 'Button' };
 
