@@ -4,7 +4,7 @@ on:
   push:
     paths:
     - 'packages/greenhouse/**'
-    - '.github/workflows/greenhouse.yml'
+    # - '.github/workflows/greenhouse.yml'
 
 jobs:   
   storybook:
@@ -39,6 +39,7 @@ jobs:
         working-directory: packages/greenhouse
         run: |
           npm ci
+          npm run build
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
