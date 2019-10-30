@@ -1,6 +1,6 @@
 import Button from './Button.svelte';
 
-export default { title: 'Button' };
+export default { title: 'Components|Button' };
 
 export const primary = () => ({
   Component: Button,

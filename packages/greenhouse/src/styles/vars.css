@@ -6,7 +6,26 @@
 
   /* Colours */
   --white: #fff;
+  --faint: #eee;
   --neutral: #ccc;
-  --primary: #1453de;
-  --primary-dark: #0f41af;
+
+  --primary: #336dff;
+  --primary-light: #6691ff;
+  --primary-dark: #2340e6;
+  --primary-inverse: #2340e6;
+
+  --secondary: #68ca6d;
+  --secondary-light: #8dd891;
+  --secondary-dark: #42bd48;
+  --secondary-inverse: #2e8433;
+
+  --tertiary: #ffe666;
+  --tertiary-light: #ffee99;
+  --tertiary-dark: #ffde33;
+  --tertiary-inverse: #8a7300;
+
+  --mono: #969696;
+  --mono-light: #bbb;
+  --mono-dark: #595959;
+  --mono-inverse: #595959;
 }

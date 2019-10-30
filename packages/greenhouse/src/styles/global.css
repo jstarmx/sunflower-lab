@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   position: relative;
@@ -6,7 +10,7 @@ body {
 }
 
 body {
-  color: #333;
+  color: #010101;
   margin: 0;
   padding: 8px;
   box-sizing: border-box;

@@ -1,0 +1,16 @@
+<script>
+  export let name;
+  const path = require('@mdi/js')[name];
+</script>
+
+<style>
+  .icon {
+    height: 1.5em;
+    width: 1.5em;
+    vertical-align: middle;
+  }
+</style>
+
+<svg class="icon" viewBox="0 0 24 24">
+  <path d={path} />
+</svg>
