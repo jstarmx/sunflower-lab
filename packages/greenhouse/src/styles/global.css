@@ -70,3 +70,8 @@ button:active {
 button:focus {
   border-color: #666;
 }
+
+.icon {
+  height: 1.5em;
+  width: 1.5em;
+}
