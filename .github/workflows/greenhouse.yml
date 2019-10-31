@@ -40,7 +40,7 @@ jobs:
         run: |
           PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
           PUBLISHED_VERSION=$(npm show @sunflower-lab/greenhouse version)
-          if [ $PACKAGE_VERSION = $PUBLISHED_VERSION ]
+          if [ $PACKAGE_VERSION != $PUBLISHED_VERSION ]
           then
             npm ci
             npm run build
