@@ -42,3 +42,6 @@ const componentList = files
 output += `\nexport {\n  ${componentList}\n};\n`;
 
 fs.writeFileSync('index.js', output);
+
+// Copy stylesheets
+fs.copySync('src/styles', 'dist/styles');

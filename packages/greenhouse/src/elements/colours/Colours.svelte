@@ -18,14 +18,14 @@
   }
   .primary {
     background-color: var(--primary);
-    color: white;
+    color: var(--white);
   }
   .primary-light {
     background-color: var(--primary-light);
   }
   .primary-dark {
     background-color: var(--primary-dark);
-    color: white;
+    color: var(--white);
   }
   .primary-inverse {
     border-color: var(--primary-inverse);
@@ -65,7 +65,7 @@
   }
   .mono-dark {
     background-color: var(--mono-dark);
-    color: white;
+    color: var(--white);
   }
   .mono-inverse {
     border-color: var(--mono-inverse);
