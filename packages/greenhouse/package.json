@@ -8,6 +8,7 @@
     "lint": "eslint ./ --ext .js,.svelte && tslint -c tslint.json 'src/**/*.ts'",
     "check-types": "tsc --project ./tsconfig.json --noEmit"
   },
+  "license": "MIT",
   "repository": "git://github.com/jstarmx/sunflower-lab",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
