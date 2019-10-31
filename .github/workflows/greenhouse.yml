@@ -39,7 +39,8 @@ jobs:
         run: |
           export PACKAGE_VERSION=$(node -p -e "require('./packages/greenhouse/package.json').version")
           export PUBLISHED_VERSION=$(npm show @sunflower-lab/greenhouse version)
-          echo $PACKAGE_VERSION $PUBLISHED_VERSION
+          echo "$PACKAGE_VERSION"
+          echo "$PUBLISHED_VERSION"
       - name: publish to npm
         if: $PACKAGE_VERSION != $PUBLISHED_VERSION
         working-directory: packages/greenhouse
