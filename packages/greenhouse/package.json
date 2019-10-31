@@ -4,9 +4,8 @@
   "scripts": {
     "build": "node ./scripts/build.js",
     "storybook": "npm run build && start-storybook",
-    "storybook:build": "build-storybook -c .storybook -o .out",
-    "lint": "eslint ./ --ext .js,.svelte && tslint -c tslint.json 'src/**/*.ts'",
-    "check-types": "tsc --project ./tsconfig.json --noEmit"
+    "storybook:build": "npm run build && build-storybook -c .storybook -o .out",
+    "lint": "eslint ./ --ext .js,.svelte && tslint -c tslint.json 'src/**/*.ts'"
   },
   "license": "MIT",
   "repository": "git://github.com/jstarmx/sunflower-lab",
