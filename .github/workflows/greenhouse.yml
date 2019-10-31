@@ -36,9 +36,12 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - name: get version numbers
-        run: |
-          export PACKAGE_VERSION=$(node -p -e "require('./packages/greenhouse/package.json').version")
-          export PUBLISHED_VERSION=$(npm show @sunflower-lab/greenhouse version)
+        env:
+          PACKAGE_VERSION: '0.4.0'
+          PUBLISHED_VERSION: '0.4.0'
+#         run: |
+#           export PACKAGE_VERSION=$(node -p -e "require('./packages/greenhouse/package.json').version")
+#           export PUBLISHED_VERSION=$(npm show @sunflower-lab/greenhouse version)
       - name: publish to npm
         if: $PACKAGE_VERSION != $PUBLISHED_VERSION
         working-directory: packages/greenhouse
