@@ -1,9 +1,13 @@
-import { mdiAccount } from '../../..';
+import { mdiAccount } from '@mdi/js';
+import Icon from './Icon.svelte';
 
 export default {
   title: 'Components|Icon',
 };
 
 export const standard = () => ({
-  Component: mdiAccount,
+  Component: Icon,
+  props: {
+    path: mdiAccount,
+  },
 });
