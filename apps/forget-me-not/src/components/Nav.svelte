@@ -1,5 +1,6 @@
 <script>
-  import { Button } from '@sunflower-lab/greenhouse';
+  import { Button, Icon } from '@sunflower-lab/greenhouse';
+  import { mdiAccount } from '@mdi/js';
 
   export let segment;
 </script>
@@ -51,6 +52,7 @@
 </style>
 
 <nav>
+  <Icon path={mdiAccount} />
   <Button label="Click me" />
   <ul>
     <li>

@@ -6,6 +6,8 @@ import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup';
 import typescript from 'rollup-plugin-typescript';
+import css from 'rollup-plugin-css-only';
+
 import pkg from './package.json';
 
 const mode = process.env.NODE_ENV;
@@ -39,6 +41,9 @@ export default {
       }),
       commonjs(),
       typescript(),
+      css({
+        output: `${config.client.output().dir}/greenhouse.global.css`,
+      }),
 
       legacy &&
         babel({
