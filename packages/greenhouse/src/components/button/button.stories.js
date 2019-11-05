@@ -1,3 +1,4 @@
+import { mdiAccount } from '@mdi/js';
 import Button from './Button.svelte';
 
 export default { title: 'Components|Button' };
@@ -14,5 +15,13 @@ export const secondary = () => ({
   props: {
     label: 'Click Me',
     type: 'secondary',
+  },
+});
+
+export const withIcon = () => ({
+  Component: Button,
+  props: {
+    label: 'Click Me',
+    icon: mdiAccount,
   },
 });

@@ -4,6 +4,7 @@
 
 <style>
   .icon {
+    fill: currentColor;
     height: 1.5em;
     width: 1.5em;
     vertical-align: middle;

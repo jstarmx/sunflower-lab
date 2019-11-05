@@ -1,6 +1,9 @@
 <script>
+  import Icon from '../icon/Icon.svelte';
+
   export let label;
   export let type;
+  export let icon;
 
   const classModifer =
     type === 'secondary' ? 'button--secondary' : 'button--primary';
@@ -8,11 +11,13 @@
 
 <style>
   .button {
+    align-items: center;
     background-color: var(--primary);
     box-shadow: 0 var(--unit) 0 0 var(--primary-dark);
     border-radius: var(--unit-x2);
     border: none;
     cursor: pointer;
+    display: inline-flex;
     padding: var(--unit-x2) var(--unit-x3);
     position: relative;
     box-shadow: 0 var(--unit) 0 0 var(--primary-dark);
@@ -34,6 +39,17 @@
     color: var(--primary);
     padding: var(--unit) var(--unit-x2);
   }
+
+  .button__label {
+    padding: var(--unit);
+  }
 </style>
 
-<button type="button" class="button {classModifer}">{label}</button>
+<button type="button" class="button {classModifer}">
+  {#if icon}
+    <Icon path={icon} />
+  {/if}
+  {#if label}
+    <span class="button__label">{label}</span>
+  {/if}
+</button>
