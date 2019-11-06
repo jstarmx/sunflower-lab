@@ -1,6 +1,7 @@
 :root {
   /* Sizing */
   --unit: 0.25em;
+  --unit-sm: calc(var(--unit) / 2);
   --unit-x2: calc(var(--unit) * 2);
   --unit-x3: calc(var(--unit) * 3);
 

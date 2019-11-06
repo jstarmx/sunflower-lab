@@ -1,12 +1,23 @@
 <script>
-  import Icon from '../icon/Icon.svelte';
+  import ButtonContent from './ButtonContent.svelte';
 
   export let label;
   export let type;
+  export let href;
   export let icon;
+  export let iconRight;
+  export let fullWidth;
 
-  const classModifer =
+  let classModifer =
     type === 'secondary' ? 'button--secondary' : 'button--primary';
+
+  if (iconRight) {
+    classModifer += ' button--icon-to-right';
+  }
+
+  if (fullWidth) {
+    classModifer += ' button--full-width';
+  }
 </script>
 
 <style>
@@ -18,14 +29,15 @@
     border: none;
     cursor: pointer;
     display: inline-flex;
-    padding: var(--unit-x2) var(--unit-x3);
+    padding: var(--unit) var(--unit-x3);
     position: relative;
-    box-shadow: 0 var(--unit) 0 0 var(--primary-dark);
+    justify-content: center;
+    text-decoration: none;
   }
 
   .button:active {
     transform: translateY(var(--unit));
-    box-shadow: 0 calc(-1 * var(--unit)) 0 0 var(--primary-dark);
+    box-shadow: none;
   }
 
   .button--primary {
@@ -35,21 +47,26 @@
 
   .button--secondary {
     background-color: var(--white);
-    border: var(--unit) solid var(--primary);
+    border: var(--unit-sm) solid var(--primary);
     color: var(--primary);
-    padding: var(--unit) var(--unit-x2);
+    padding: var(--unit-sm) var(--unit-x2);
   }
 
-  .button__label {
-    padding: var(--unit);
+  .button--icon-to-right {
+    flex-direction: row-reverse;
+  }
+
+  .button--full-width {
+    width: 100%;
   }
 </style>
 
-<button type="button" class="button {classModifer}">
-  {#if icon}
-    <Icon path={icon} />
-  {/if}
-  {#if label}
-    <span class="button__label">{label}</span>
-  {/if}
-</button>
+{#if href}
+  <a {href} class="button {classModifer}">
+    <ButtonContent {icon} {label} />
+  </a>
+{:else}
+  <button type="button" class="button {classModifer}">
+    <ButtonContent {icon} {label} />
+  </button>
+{/if}
