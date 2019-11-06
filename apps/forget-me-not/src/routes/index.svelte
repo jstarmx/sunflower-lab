@@ -1,7 +1,9 @@
-<style>
-
-</style>
+<script>
+  import { Button } from '@sunflower-lab/greenhouse';
+</script>
 
 <svelte:head>
-  <title>Let's get started | Forget-me-not</title>
+  <title>Home | Forget-me-not</title>
 </svelte:head>
+
+<Button href="/get-started-1" label="Get started" />

@@ -1,15 +1,27 @@
 <script>
-  import Nav from '../components/Nav.svelte';
+  import Header from '../components/Header.svelte';
 
   export let segment;
 </script>
 
 <style>
-
+  .container {
+    display: grid;
+    grid-template-rows: min-content auto;
+    height: 100%;
+  }
+  .main-content {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    padding: var(--unit-x2);
+  }
 </style>
 
-<Nav {segment} />
+<div class="container">
+  <Header {segment} />
 
-<main>
-  <slot />
-</main>
+  <main class="main-content">
+    <slot />
+  </main>
+</div>
