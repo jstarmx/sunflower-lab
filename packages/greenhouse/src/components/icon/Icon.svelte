@@ -5,8 +5,8 @@
 <style>
   .icon {
     fill: currentColor;
-    height: 1.5em;
-    width: 1.5em;
+    height: 1.25em;
+    width: 1.25em;
     vertical-align: middle;
   }
 </style>

@@ -33,6 +33,7 @@
     position: relative;
     justify-content: center;
     text-decoration: none;
+    width: fit-content;
   }
 
   .button:active {
@@ -66,7 +67,7 @@
     <ButtonContent {icon} {label} />
   </a>
 {:else}
-  <button type="button" class="button {classModifer}">
+  <button type="button" class="button {classModifer}" on:click>
     <ButtonContent {icon} {label} />
   </button>
 {/if}
