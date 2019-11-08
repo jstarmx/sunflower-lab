@@ -10,18 +10,17 @@
     grid-template-rows: min-content auto;
     height: 100%;
   }
-  .main-content {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    padding: var(--unit-x2);
+  main {
+    display: flex;
+    flex-direction: column;
+    padding: var(--unit-x3);
   }
 </style>
 
 <div class="container">
   <Header {segment} />
 
-  <main class="main-content">
+  <main>
     <slot />
   </main>
 </div>
