@@ -13,12 +13,12 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.6.4",
+    "@babel/core": "^7.10.3",
     "@mdi/js": "^4.5.95",
-    "@storybook/svelte": "^5.2.4",
+    "@storybook/svelte": "^5.3.19",
     "babel-loader": "^8.0.6",
     "fast-glob": "^3.1.0",
-    "storybook": "^5.1.11",
+    "storybook": "^5.3.19",
     "svelte-loader": "^2.13.6"
   }
 }
