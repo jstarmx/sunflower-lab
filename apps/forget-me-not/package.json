@@ -17,6 +17,9 @@
     "polka": "next",
     "sirv": "^0.4.0"
   },
+  "peerDependencies": {
+    "svelte": "^3.23.2"
+  },
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
