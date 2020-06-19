@@ -1,7 +1,6 @@
 <script>
   export let placeholder;
   export let value;
-  export let type = 'text';
 </script>
 
 <style>

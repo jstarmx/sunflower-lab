@@ -4,48 +4,20 @@
   "scripts": {
     "build": "node ./scripts/build.js",
     "storybook": "start-storybook",
-    "storybook:build": "build-storybook -c .storybook -o .out",
-    "lint": "eslint ./ --ext .js,.svelte"
+    "storybook:build": "build-storybook -c .storybook -o .out"
   },
   "license": "MIT",
   "repository": "git://github.com/jstarmx/sunflower-lab",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "./node_modules/.bin/eslint ./ --fix",
-      "git add"
-    ],
-    "*.{json,md,svelte}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "dependencies": {
-    "svelte": "^3.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@mdi/js": "^4.5.95",
     "@storybook/svelte": "^5.2.4",
     "babel-loader": "^8.0.6",
-    "eslint": "^6.0.1",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-svelte3": "^2.6.0",
     "fast-glob": "^3.1.0",
-    "husky": "^3.0.9",
-    "lint-staged": "^9.0.1",
-    "prettier": "^1.18.2",
-    "prettier-plugin-svelte": "^0.7.0",
     "storybook": "^5.1.11",
     "svelte-loader": "^2.13.6"
   }

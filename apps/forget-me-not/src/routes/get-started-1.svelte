@@ -1,7 +1,6 @@
 <script>
   import { mdiArrowRight } from '@mdi/js';
   import { Button, Input } from '@sunflower-lab/greenhouse';
-  import { onMount } from 'svelte';
 
   import user from '../models/user';
 
@@ -9,7 +8,7 @@
 
   const handleClick = () => {
     user.set({ name }).save();
-  }
+  };
 </script>
 
 <style>
@@ -26,10 +25,7 @@
 <p>Hi! I'm a Labrador puppy. We're well known for looking after our humans.</p>
 <p>Would you like to tell me your name?</p>
 
-<Input
-  placeholder="Enter your name here..."
-  bind:value={name}
-/>
+<Input placeholder="Enter your name here..." bind:value={name} />
 
 <footer>
   <Button
@@ -37,6 +33,5 @@
     label="Next"
     icon={mdiArrowRight}
     iconRight
-    fullWidth
-  />
+    fullWidth />
 </footer>

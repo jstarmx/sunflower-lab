@@ -1,8 +1,6 @@
 <script>
-  import { Button, Icon } from '@sunflower-lab/greenhouse';
+  import { Button } from '@sunflower-lab/greenhouse';
   import { mdiMenu } from '@mdi/js';
-
-  export let segment;
 </script>
 
 <style>
