@@ -3,30 +3,30 @@ name: Greenhouse
 on:
   push:
     paths:
-    - 'packages/greenhouse/**'
+      - 'packages/greenhouse/**'
     # - '.github/workflows/greenhouse.yml'
 
-jobs:   
+jobs:
   storybook:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 12
-    - name: build storybook
-      working-directory: packages/greenhouse
-      run: |
-        npm ci
-        npm run storybook:build
-    - name: deploy to pages
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.GITHUB_PAGES_TOKEN }}
-        BASE_BRANCH: master
-        BRANCH: gh-pages
-        FOLDER: packages/greenhouse/.out
-  
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: build storybook
+        working-directory: packages/greenhouse
+        run: |
+          npm install
+          npm run storybook:build
+      - name: deploy to pages
+        uses: JamesIves/github-pages-deploy-action@master
+        env:
+          ACCESS_TOKEN: ${{ secrets.GITHUB_PAGES_TOKEN }}
+          BASE_BRANCH: master
+          BRANCH: gh-pages
+          FOLDER: packages/greenhouse/.out
+
   package:
     runs-on: ubuntu-latest
     steps:
