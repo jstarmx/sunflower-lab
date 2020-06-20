@@ -7,7 +7,19 @@ on:
       - '.github/workflows/greenhouse.yml'
 
 jobs:
+  installDeps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: install dependencies
+        run: |
+          npm ci
+
   storybook:
+    needs: installDeps
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -17,7 +29,7 @@ jobs:
       - name: build storybook
         working-directory: packages/greenhouse
         run: |
-          npm install
+          npm ci
           npm run storybook:build
       - name: deploy to pages
         uses: JamesIves/github-pages-deploy-action@master
@@ -28,6 +40,7 @@ jobs:
           FOLDER: packages/greenhouse/.out
 
   package:
+    needs: installDeps
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
