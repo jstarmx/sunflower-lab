@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -7,38 +7,28 @@
 
     %sapper.base%
 
-    <link rel="stylesheet" href="https://use.typekit.net/bfr5dlm.css">
+    <link rel="stylesheet" href="https://use.typekit.net/bfr5dlm.css" />
     <link rel="stylesheet" href="client/greenhouse.global.css" />
-    <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials" />
     <link rel="icon" type="image/png" href="favicon.png" />
 
     <!-- Sapper generates a <style> tag containing critical CSS
-       for the current page. CSS for the rest of the app is
-       lazily loaded when it precaches secondary pages -->
+	     for the current page. CSS for the rest of the app is
+	     lazily loaded when it precaches secondary pages -->
     %sapper.styles%
 
     <!-- This contains the contents of the <svelte:head> component, if
-       the current page has one -->
+	     the current page has one -->
     %sapper.head%
   </head>
   <body>
     <!-- The application will be rendered inside this element,
-       because `src/client.js` references it -->
+	     because `src/client.js` references it -->
     <div id="sapper">%sapper.html%</div>
 
     <!-- Sapper creates a <script> tag containing `src/client.js`
-       and anything else it needs to hydrate the app and
-       initialise the router -->
+	     and anything else it needs to hydrate the app and
+	     initialise the router -->
     %sapper.scripts%
-
-    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services
-         Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="/__/firebase/7.2.1/firebase-app.js"></script>
-
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="/__/firebase/7.2.1/firebase-analytics.js"></script>
-
-    <!-- Add Firebase products that you want to use -->
-    <script src="/__/firebase/7.2.1/firebase-performance.js"></script>
   </body>
 </html>

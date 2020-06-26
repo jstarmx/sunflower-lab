@@ -1,8 +1,8 @@
-import resolve from 'rollup-plugin-node-resolve';
-import replace from 'rollup-plugin-replace';
-import commonjs from 'rollup-plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import replace from '@rollup/plugin-replace';
+import commonjs from '@rollup/plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup';
 import css from 'rollup-plugin-css-only';
@@ -17,8 +17,6 @@ const onwarn = (warning, cb) =>
   (warning.code === 'CIRCULAR_DEPENDENCY' &&
     /[/\\]@sapper[/\\]/.test(warning.message)) ||
   cb(warning);
-const dedupe = importee =>
-  importee === 'svelte' || importee.startsWith('svelte/');
 
 export default {
   client: {
@@ -36,7 +34,7 @@ export default {
       }),
       resolve({
         browser: true,
-        dedupe,
+        dedupe: ['svelte'],
       }),
       commonjs(),
       css({
@@ -46,7 +44,7 @@ export default {
       legacy &&
         babel({
           extensions: ['.js', '.mjs', '.html', '.svelte'],
-          runtimeHelpers: true,
+          babelHelpers: 'runtime',
           exclude: ['node_modules/@babel/**'],
           presets: [
             [
@@ -73,6 +71,7 @@ export default {
         }),
     ],
 
+    preserveEntrySignatures: false,
     onwarn,
   },
 
@@ -89,7 +88,7 @@ export default {
         dev,
       }),
       resolve({
-        dedupe,
+        dedupe: ['svelte'],
       }),
       commonjs(),
     ],
@@ -98,6 +97,7 @@ export default {
         Object.keys(process.binding('natives')),
     ),
 
+    preserveEntrySignatures: 'strict',
     onwarn,
   },
 
@@ -114,6 +114,7 @@ export default {
       !dev && terser(),
     ],
 
+    preserveEntrySignatures: false,
     onwarn,
   },
 };

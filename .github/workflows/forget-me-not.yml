@@ -3,27 +3,26 @@ name: Forget-me-not
 on:
   push:
     paths:
-    - 'apps/forget-me-not/**'
-    - '.github/workflows/forget-me-not.yml'
+      - 'apps/forget-me-not/**'
+      - '.github/workflows/forget-me-not.yml'
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-    - name: npm install and build
-      working-directory: apps/forget-me-not
-      run: |
-        npm ci
-        npm run export
-    - name: deploy to firebase
-      working-directory: apps/forget-me-not
-      run: |
-        npm install -g firebase-tools
-        firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install and build
+        working-directory: apps/forget-me-not
+        run: |
+          npm ci
+          npm run export
+      - name: deploy to firebase
+        working-directory: apps/forget-me-not
+        run: |
+          npm install -g firebase-tools
+          firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
