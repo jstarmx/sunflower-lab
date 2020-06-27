@@ -6,12 +6,12 @@ let output = '';
 
 const files = glob.sync('./src/**/*.svelte');
 
-files.forEach((file) => {
+files.forEach(file => {
   output += `import ${path.basename(file, '.svelte')} from '${file}';\n`;
 });
 
 const components = files
-  .map((file) => path.basename(file, '.svelte'))
+  .map(file => path.basename(file, '.svelte'))
   .join(',\n  ');
 
 output += `\nexport {\n  ${components}\n};\n`;

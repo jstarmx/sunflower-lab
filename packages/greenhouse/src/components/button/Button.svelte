@@ -26,9 +26,10 @@
     background-color: var(--primary);
     box-shadow: 0 var(--unit) 0 0 var(--primary-dark);
     border-radius: var(--unit-x2);
-    border: none;
+    border: var(--unit-sm) solid var(--primary);
     cursor: pointer;
     display: inline-flex;
+    line-height: var(--unit-x4);
     padding: var(--unit) var(--unit-x3);
     position: relative;
     justify-content: center;
@@ -48,9 +49,7 @@
 
   .button--secondary {
     background-color: var(--white);
-    border: var(--unit-sm) solid var(--primary);
     color: var(--primary);
-    padding: var(--unit-sm) var(--unit-x2);
   }
 
   .button--icon-to-right {
