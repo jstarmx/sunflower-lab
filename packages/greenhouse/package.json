@@ -14,11 +14,11 @@
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@mdi/js": "^4.5.95",
-    "@storybook/svelte": "^5.3.19",
+    "@storybook/svelte": "^6.0.21",
     "babel-loader": "^8.0.6",
     "fast-glob": "^3.1.0",
-    "storybook": "^5.3.19",
-    "svelte": "^3.23.2",
+    "storybook": "^6.0.21",
+    "svelte": "^3.25.1",
     "svelte-loader": "^2.13.6"
   }
 }

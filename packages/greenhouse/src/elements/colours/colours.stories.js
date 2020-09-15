@@ -1,7 +1,7 @@
 import Colours from './Colours.svelte';
 
 export default {
-  title: 'Elements|Colours',
+  title: 'Elements/Colours',
 };
 
 export const main = () => ({

@@ -1,7 +1,7 @@
 import { mdiAccount, mdiArrowRight } from '@mdi/js';
 import Button from './Button.svelte';
 
-export default { title: 'Components|Button' };
+export default { title: 'Components/Button' };
 
 export const primary = () => ({
   Component: Button,
