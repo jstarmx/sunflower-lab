@@ -2,11 +2,11 @@
   import ButtonContent from './ButtonContent.svelte';
 
   export let label;
-  export let type;
-  export let href;
-  export let icon;
-  export let iconRight;
-  export let fullWidth;
+  export let type = '';
+  export let href = '';
+  export let icon = '';
+  export let iconRight = false;
+  export let fullWidth = false;
 
   let classModifer =
     type === 'secondary' ? 'button--secondary' : 'button--primary';
@@ -62,11 +62,11 @@
 </style>
 
 {#if href}
-  <a {href} class="button {classModifer}">
-    <ButtonContent {icon} {label} />
+  <a href="{href}" class="button {classModifer}">
+    <ButtonContent icon="{icon}" label="{label}" />
   </a>
 {:else}
   <button type="button" class="button {classModifer}" on:click>
-    <ButtonContent {icon} {label} />
+    <ButtonContent icon="{icon}" label="{label}" />
   </button>
 {/if}

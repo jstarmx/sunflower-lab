@@ -77,109 +77,61 @@
 </style>
 
 <div class="container">
-  <div class="item" />
+  <div class="item"></div>
   <div class="item heading">Inverse</div>
   <div class="item heading">Light</div>
   <div class="item heading">Default</div>
   <div class="item heading">Dark</div>
   <div class="item heading">Primary</div>
   <div class="item primary-inverse">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item primary-light">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item primary">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item primary-dark">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item heading">Secondary</div>
   <div class="item secondary-inverse">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item secondary-light">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item secondary">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item secondary-dark">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item heading">Tertiary</div>
   <div class="item tertiary-inverse">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item tertiary-light">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item tertiary">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item tertiary-dark">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item heading">Monochrome</div>
   <div class="item mono-inverse">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item mono-light">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item mono">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
   <div class="item mono-dark">
-    <span>
-      a
-      <span class="large-text">a</span>
-    </span>
+    <span> a <span class="large-text">a</span> </span>
   </div>
 </div>

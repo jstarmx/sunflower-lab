@@ -4,9 +4,11 @@ class User {
 
     if (typeof localStorage !== 'undefined') {
       const data = localStorage.getItem('user');
-      try {
-        this._data = JSON.parse(data);
-      } catch (error) {} // eslint-disable-line no-empty
+      if (data) {
+        try {
+          this._data = JSON.parse(data);
+        } catch (error) {} // eslint-disable-line no-empty
+      }
     }
   }
 

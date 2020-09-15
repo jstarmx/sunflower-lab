@@ -1,6 +1,6 @@
 <script>
-  export let placeholder;
-  export let value;
+  export let placeholder = '';
+  export let value = '';
 </script>
 
 <style>
@@ -18,4 +18,4 @@
   }
 </style>
 
-<input {placeholder} type="text" bind:value />
+<input placeholder="{placeholder}" type="text" bind:value />

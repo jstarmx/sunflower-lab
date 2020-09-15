@@ -1,7 +1,5 @@
 <script>
   import Header from '../components/Header.svelte';
-
-  export let segment;
 </script>
 
 <style>
@@ -13,12 +11,12 @@
   main {
     display: flex;
     flex-direction: column;
-    padding: var(--unit-x3);
+    padding: var(--unit-x5);
   }
 </style>
 
 <div class="container">
-  <Header {segment} />
+  <Header />
 
   <main>
     <slot />

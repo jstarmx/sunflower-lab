@@ -5,6 +5,7 @@
   --unit-x2: calc(var(--unit) * 2);
   --unit-x3: calc(var(--unit) * 3);
   --unit-x4: calc(var(--unit) * 4);
+  --unit-x5: calc(var(--unit) * 5);
 
   /* Colours */
   --white: #fff;

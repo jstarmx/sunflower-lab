@@ -12,5 +12,5 @@
 </style>
 
 <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
-  <path d={path} />
+  <path d="{path}"></path>
 </svg>

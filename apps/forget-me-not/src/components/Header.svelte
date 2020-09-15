@@ -17,5 +17,5 @@
 
 <header>
   <a href="." class="logo">home</a>
-  <Button label="Menu" icon={mdiMenu} />
+  <Button label="Menu" icon="{mdiMenu}" />
 </header>
