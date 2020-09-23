@@ -7,12 +7,12 @@
 
 <style>
   .button__label {
-    margin: auto;
+    /* margin: auto; */
     padding: var(--unit);
   }
 </style>
 
 {#if icon}
-  <Icon path="{icon}" />
+  <Icon path={icon} />
 {/if}
 {#if label}<span class="button__label">{label}</span>{/if}

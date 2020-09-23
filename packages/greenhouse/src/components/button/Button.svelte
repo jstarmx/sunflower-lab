@@ -62,11 +62,11 @@
 </style>
 
 {#if href}
-  <a href="{href}" class="button {classModifer}">
-    <ButtonContent icon="{icon}" label="{label}" />
+  <a {href} class="button {classModifer}">
+    <ButtonContent {icon} {label} />
   </a>
 {:else}
   <button type="button" class="button {classModifer}" on:click>
-    <ButtonContent icon="{icon}" label="{label}" />
+    <ButtonContent {icon} {label} />
   </button>
 {/if}
