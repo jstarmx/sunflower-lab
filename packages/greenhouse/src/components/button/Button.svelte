@@ -2,14 +2,15 @@
   import ButtonContent from './ButtonContent.svelte';
 
   export let label;
-  export let type = '';
+  export let mode = '';
   export let href = '';
   export let icon = '';
+  export let type = 'submit';
   export let iconRight = false;
   export let fullWidth = false;
 
   let classModifer =
-    type === 'secondary' ? 'button--secondary' : 'button--primary';
+    mode === 'secondary' ? 'button--secondary' : 'button--primary';
 
   if (iconRight) {
     classModifer += ' button--icon-to-right';
@@ -66,7 +67,7 @@
     <ButtonContent {icon} {label} />
   </a>
 {:else}
-  <button type="button" class="button {classModifer}" on:click>
+  <button {type} class="button {classModifer}" on:click>
     <ButtonContent {icon} {label} />
   </button>
 {/if}
