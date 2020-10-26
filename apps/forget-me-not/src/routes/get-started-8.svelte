@@ -5,13 +5,14 @@
   import user from '../models/user';
 
   const lovedOneName = user.get('lovedOneName');
-
-  const handleNext = () => {
-    window.location.href = '/home';
-  };
+  const friendName = user.get('lovedOneName');
 </script>
 
 <style>
+  img {
+    margin-left: auto;
+    width: 66%;
+  }
   footer {
     margin-top: auto;
     width: 100%;
@@ -21,6 +22,8 @@
 <svelte:head>
   <title>Get started | Step 8 | Forget-me-not</title>
 </svelte:head>
+
+<img src="/images/puppy.jpg" alt={friendName} />
 
 <p>
   Go ahead and explore the rest of the app. If you ever need my help, just click
@@ -32,5 +35,5 @@
 </p>
 
 <footer>
-  <Button on:click={handleNext} label="Home" icon={mdiHome} fullWidth />
+  <Button href="/home" label="Home" icon={mdiHome} fullWidth />
 </footer>

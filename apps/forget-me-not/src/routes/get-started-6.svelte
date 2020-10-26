@@ -13,6 +13,9 @@
 </script>
 
 <style>
+  :global(textarea) {
+    flex-grow: 1;
+  }
   footer {
     margin-top: auto;
     width: 100%;
@@ -26,14 +29,10 @@
 <p>Tell the story of your memory:</p>
 <p>(P.S. remember you can come back to it later!)</p>
 
-<TextArea placeholder="Enter your story here..." bind:value={memoryStory} />
+<form on:submit|preventDefault={handleNext}>
+  <TextArea placeholder="Enter your story here..." bind:value={memoryStory} />
 
-<footer>
-  <Button
-    on:click={handleNext}
-    label="Next"
-    icon={mdiArrowRight}
-    iconRight
-    fullWidth
-  />
-</footer>
+  <footer>
+    <Button label="Next" icon={mdiArrowRight} iconRight fullWidth />
+  </footer>
+</form>

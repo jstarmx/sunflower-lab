@@ -7,18 +7,22 @@
   const name = user.get('name');
   let friendName = user.get('friendName');
 
-  const handleNext = (friendNameChosen = true) => {
-    user.set({ friendNameChosen }).set({ friendName }).save();
+  const handleNext = () => {
+    user.set({ friendNameChosen: true }).set({ friendName }).save();
     window.location.href = '/get-started-3';
   };
 
   const handleYouChoose = () => {
-    friendName = 'Sam';
-    handleNext(false);
+    user.set({ friendName: 'Sam' }).save();
+    window.location.href = '/get-started-3';
   };
 </script>
 
 <style>
+  img {
+    margin-left: auto;
+    width: 66%;
+  }
   footer {
     margin-top: auto;
     width: 100%;
@@ -29,30 +33,29 @@
   <title>Get started | Step 2 | Forget-me-not</title>
 </svelte:head>
 
+<img src="/images/puppy.jpg" alt="Cute brown puppy" />
+
 <p>
   Hi {name}, I'm very pleased to meet you! Would you like to give me a name too?
 </p>
 <p>(You can always change it later!)</p>
 
-<Input placeholder="Enter my new name here..." bind:value="{friendName}" />
+<form on:submit|preventDefault={handleNext}>
+  <Input placeholder="Enter my new name here..." bind:value={friendName} />
 
-<footer>
-  <p>
-    <Button
-      on:click="{handleYouChoose}"
-      label="You choose"
-      type="secondary"
-      icon="{mdiArrowRight}"
-      iconRight
-      fullWidth
-    />
-  </p>
+  <footer>
+    <p>
+      <Button
+        on:click={handleYouChoose}
+        label="You choose"
+        type="button"
+        mode="secondary"
+        icon={mdiArrowRight}
+        iconRight
+        fullWidth
+      />
+    </p>
 
-  <Button
-    on:click="{handleNext}"
-    label="Next"
-    icon="{mdiArrowRight}"
-    iconRight
-    fullWidth
-  />
-</footer>
+    <Button label="Next" icon={mdiArrowRight} iconRight fullWidth />
+  </footer>
+</form>

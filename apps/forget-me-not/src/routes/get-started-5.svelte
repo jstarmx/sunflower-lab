@@ -25,14 +25,10 @@
 
 <p>Give your memory a title:</p>
 
-<Input placeholder="Enter a title here..." bind:value={memoryTitle} />
+<form on:submit|preventDefault={handleNext}>
+  <Input placeholder="Enter a title here..." bind:value={memoryTitle} />
 
-<footer>
-  <Button
-    on:click={handleNext}
-    label="Next"
-    icon={mdiArrowRight}
-    iconRight
-    fullWidth
-  />
-</footer>
+  <footer>
+    <Button label="Next" icon={mdiArrowRight} iconRight fullWidth />
+  </footer>
+</form>

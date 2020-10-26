@@ -15,6 +15,10 @@
 </script>
 
 <style>
+  img {
+    margin-left: auto;
+    width: 66%;
+  }
   footer {
     margin-top: auto;
     width: 100%;
@@ -24,6 +28,8 @@
 <svelte:head>
   <title>Get started | Step 3 | Forget-me-not</title>
 </svelte:head>
+
+<img src="/images/puppy.jpg" alt={friendName} />
 
 {#if friendNameChosen}
   <p>Ooh {friendName}, I love it!</p>
@@ -36,14 +42,10 @@
   remember?
 </p>
 
-<Input placeholder="Enter their name here..." bind:value="{lovedOneName}" />
+<form on:submit|preventDefault={handleNext}>
+  <Input placeholder="Enter their name here..." bind:value={lovedOneName} />
 
-<footer>
-  <Button
-    on:click="{handleNext}"
-    label="Next"
-    icon="{mdiArrowRight}"
-    iconRight
-    fullWidth
-  />
-</footer>
+  <footer>
+    <Button label="Next" icon={mdiArrowRight} iconRight fullWidth />
+  </footer>
+</form>
