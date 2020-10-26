@@ -5,8 +5,8 @@
 
 <style>
   header {
-    background-color: var(--secondary-light);
-    border-bottom: var(--unit) solid var(--secondary-dark);
+    background-color: var(--primary-light);
+    border-bottom: var(--unit) solid var(--primary-dark);
     display: flex;
     padding: var(--unit-x2);
   }
@@ -17,5 +17,5 @@
 
 <header>
   <a href="." class="logo">home</a>
-  <Button label="Menu" icon="{mdiMenu}" />
+  <Button label="Menu" icon={mdiMenu} />
 </header>
