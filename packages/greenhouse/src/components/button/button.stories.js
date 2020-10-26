@@ -14,7 +14,7 @@ export const secondary = () => ({
   Component: Button,
   props: {
     label: 'Click Me',
-    type: 'secondary',
+    mode: 'secondary',
   },
 });
 
