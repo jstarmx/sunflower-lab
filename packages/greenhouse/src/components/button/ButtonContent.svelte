@@ -7,8 +7,8 @@
 
 <style>
   .button__label {
-    /* margin: auto; */
     padding: var(--unit);
+    padding-top: var(--unit-sm);
   }
 </style>
 

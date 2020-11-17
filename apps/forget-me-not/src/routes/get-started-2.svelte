@@ -23,8 +23,10 @@
     margin-left: auto;
     width: 66%;
   }
-  footer {
+  form {
     margin-top: auto;
+  }
+  footer {
     width: 100%;
   }
 </style>
@@ -36,7 +38,8 @@
 <img src="/images/puppy.jpg" alt="Cute brown puppy" />
 
 <p>
-  Hi {name}, I'm very pleased to meet you! Would you like to give me a name too?
+  Hi
+  {name}, I'm very pleased to meet you! Would you like to give me a name too?
 </p>
 <p>(You can always change it later!)</p>
 

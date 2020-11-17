@@ -30,10 +30,11 @@
   on my face up there.
 </p>
 <p>
-  Together we'll treasure the memory of {lovedOneName} and remember all the reasons
-  you loved them so much.
+  Together we'll treasure the memory of
+  {lovedOneName}
+  and remember all the reasons you loved them so much.
 </p>
 
 <footer>
-  <Button href="/home" label="Home" icon={mdiHome} fullWidth />
+  <Button href="/" label="Home" icon={mdiHome} fullWidth />
 </footer>

@@ -16,8 +16,13 @@
   :global(textarea) {
     flex-grow: 1;
   }
-  footer {
+  form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     margin-top: auto;
+  }
+  footer {
     width: 100%;
   }
 </style>

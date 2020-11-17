@@ -13,6 +13,11 @@
 </script>
 
 <style>
+  form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
   footer {
     margin-top: auto;
     width: 100%;

@@ -19,8 +19,10 @@
     margin-left: auto;
     width: 66%;
   }
-  footer {
+  form {
     margin-top: auto;
+  }
+  footer {
     width: 100%;
   }
 </style>

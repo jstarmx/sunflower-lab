@@ -8,6 +8,7 @@
   export let type = 'submit';
   export let iconRight = false;
   export let fullWidth = false;
+  export let snug = false;
 
   let classModifer =
     mode === 'secondary' ? 'button--secondary' : 'button--primary';
@@ -18,6 +19,10 @@
 
   if (fullWidth) {
     classModifer += ' button--full-width';
+  }
+
+  if (snug) {
+    classModifer += ' button--snug';
   }
 </script>
 
@@ -32,6 +37,7 @@
     display: inline-flex;
     line-height: var(--unit-x4);
     padding: var(--unit) var(--unit-x3);
+    margin: var(--unit-x2) 0 0;
     position: relative;
     justify-content: center;
     text-decoration: none;
@@ -59,6 +65,10 @@
 
   .button--full-width {
     width: 100%;
+  }
+
+  .button--snug {
+    margin: 0;
   }
 </style>
 

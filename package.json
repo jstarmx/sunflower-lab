@@ -22,17 +22,17 @@
     ]
   },
   "devDependencies": {
-    "eslint": "7.2",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-cypress": "^2.11.1",
-    "eslint-plugin-import": "^2.21.2",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-svelte3": "^2.7.3",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
-    "prettier": "^2.1.1",
-    "prettier-plugin-svelte": "^1.2.1",
-    "svelte": "^3.25.1"
+    "prettier": "^2.1.2",
+    "prettier-plugin-svelte": "^1.4.1",
+    "svelte": "^3.29.7"
   }
 }
