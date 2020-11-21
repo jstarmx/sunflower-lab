@@ -11,3 +11,11 @@ export const standard = () => ({
     path: mdiAccount,
   },
 });
+
+export const inCircle = () => ({
+  Component: Icon,
+  props: {
+    path: mdiAccount,
+    background: 'white',
+  },
+});

@@ -1,17 +1,21 @@
 <script>
   import { Button } from '@sunflower-lab/greenhouse';
-  import { mdiMenu } from '@mdi/js';
+  import { mdiMenu, mdiClose } from '@mdi/js';
 
   import user from '../models/user';
 
   const lovedOneName = user.get('lovedOneName');
   const name = user.get('lovedOneName');
+
+  export let auth;
+  export let handleToggleMenu;
+  export let menuOpen;
 </script>
 
 <style>
   header {
     background-color: var(--primary-light);
-    border-bottom: var(--unit) solid var(--primary);
+    border-bottom: var(--unit) solid var(--primary-dark);
     display: flex;
     padding: var(--unit-x2) var(--unit-x3);
     justify-content: space-between;
@@ -52,8 +56,13 @@
 
 <header>
   <a href="/"><img src="/images/logo-new.svg" alt="Forget-me-not logo" /></a>
-  {#if lovedOneName && name}
-    <button class="help" />
-    <Button label="Menu" icon={mdiMenu} snug />
+  {#if lovedOneName && name}<button class="help" />{/if}
+  {#if auth}
+    <Button
+      label={menuOpen ? 'Close' : 'Menu'}
+      icon={menuOpen ? mdiClose : mdiMenu}
+      snug
+      on:click={handleToggleMenu}
+    />
   {/if}
 </header>

@@ -44,6 +44,11 @@
     width: fit-content;
   }
 
+  button:focus {
+    box-shadow: 0 0 0 var(--unit) var(--secondary-light);
+    outline: none;
+  }
+
   .button:active {
     transform: translateY(var(--unit));
     box-shadow: none;

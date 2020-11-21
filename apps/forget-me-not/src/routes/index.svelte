@@ -7,12 +7,22 @@
   const name = user.get('lovedOneName');
 </script>
 
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    padding: var(--unit-x5);
+  }
+</style>
+
 <svelte:head>
   <title>Home | Forget-me-not</title>
 </svelte:head>
 
-{#if lovedOneName && name}
-  Menu...
-{:else}
-  <Button href="/get-started-1" label="Get started" />
-{/if}
+<section>
+  {#if lovedOneName && name}
+    Menu...
+  {:else}
+    <Button href="/get-started-1" label="Get started" />
+  {/if}
+</section>

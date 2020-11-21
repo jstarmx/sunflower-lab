@@ -40,8 +40,8 @@
 <p>
   Hi
   {name}, I'm very pleased to meet you! Would you like to give me a name too?
+  (You can always change it later!)
 </p>
-<p>(You can always change it later!)</p>
 
 <form on:submit|preventDefault={handleNext}>
   <Input placeholder="Enter my new name here..." bind:value={friendName} />

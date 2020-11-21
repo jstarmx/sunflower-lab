@@ -15,9 +15,19 @@
   };
 </script>
 
-<h1>Sign in</h1>
-<form on:submit|preventDefault={handleSubmit}>
-  <Input bind:value={email} type="email" label="Email address" />
-  <Input bind:value={password} type="password" label="Password" />
-  <Button label="Sign in" icon={mdiCheck} fullWidth />
-</form>
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    padding: var(--unit-x5);
+  }
+</style>
+
+<section>
+  <h1>Sign in</h1>
+  <form on:submit|preventDefault={handleSubmit}>
+    <Input bind:value={email} type="email" label="Email address" />
+    <Input bind:value={password} type="password" label="Password" />
+    <Button label="Sign in" icon={mdiCheck} fullWidth />
+  </form>
+</section>

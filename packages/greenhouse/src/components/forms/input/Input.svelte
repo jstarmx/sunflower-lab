@@ -16,13 +16,12 @@
     color: var(--primary-inverse);
     margin: var(--unit) 0 var(--unit-x2);
     padding: var(--unit-x2) var(--unit-x3);
-    padding-top: var(--unit);
     width: 100%;
   }
 
   input:focus {
-    box-shadow: 0 0 0 var(--unit) var(--primary-light);
-    border-color: var(--primary);
+    box-shadow: 0 0 0 var(--unit) var(--secondary-light);
+    border-color: var(--secondary);
     outline: none;
   }
 

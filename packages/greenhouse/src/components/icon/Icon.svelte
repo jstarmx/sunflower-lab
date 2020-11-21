@@ -1,9 +1,21 @@
 <script>
   export let path;
+  export let background;
 </script>
 
 <style>
-  .icon {
+  .circle {
+    border-radius: 50%;
+    color: white;
+    display: inline-flex;
+    padding: var(--unit-x2);
+  }
+
+  .circle--white {
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  svg {
     fill: currentColor;
     height: 1.25em;
     width: 1.25em;
@@ -11,6 +23,8 @@
   }
 </style>
 
-<svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
-  <path d="{path}"></path>
-</svg>
+<span class={`${background ? `circle circle--${background}` : ''}`}>
+  <svg aria-hidden="true" viewBox="0 0 24 24">
+    <path d={path} />
+  </svg>
+</span>

@@ -8,7 +8,6 @@
 <style>
   .button__label {
     padding: var(--unit);
-    padding-top: var(--unit-sm);
   }
 </style>
 
