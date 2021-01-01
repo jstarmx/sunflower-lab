@@ -1,6 +1,6 @@
 <script>
   export let path;
-  export let background;
+  export let background = '';
 </script>
 
 <style>
@@ -13,6 +13,10 @@
 
   .circle--white {
     background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .circle--black {
+    background-color: rgba(0, 0, 0, 0.25);
   }
 
   svg {

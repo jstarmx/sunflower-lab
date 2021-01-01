@@ -1,6 +1,6 @@
 {
   "name": "@sunflower-lab/greenhouse",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "scripts": {
     "build": "node ./scripts/build.js",
     "storybook": "start-storybook",
@@ -14,10 +14,10 @@
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@mdi/js": "^4.5.95",
-    "@storybook/svelte": "^6.1.2",
+    "@storybook/svelte": "^6.1.11",
     "babel-loader": "^8.0.6",
     "fast-glob": "^3.1.0",
-    "storybook": "^6.1.2",
+    "storybook": "^6.1.11",
     "svelte": "^3.31.0",
     "svelte-loader": "^2.13.6"
   }

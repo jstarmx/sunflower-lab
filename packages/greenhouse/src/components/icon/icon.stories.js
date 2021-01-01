@@ -16,6 +16,6 @@ export const inCircle = () => ({
   Component: Icon,
   props: {
     path: mdiAccount,
-    background: 'white',
+    background: 'black',
   },
 });

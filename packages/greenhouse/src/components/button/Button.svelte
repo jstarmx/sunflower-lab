@@ -35,6 +35,7 @@
     border: var(--unit-sm) solid var(--primary);
     cursor: pointer;
     display: inline-flex;
+    font-weight: bold;
     line-height: var(--unit-x4);
     padding: var(--unit) var(--unit-x3);
     margin: var(--unit-x2) 0 0;
