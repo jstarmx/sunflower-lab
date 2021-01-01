@@ -33,6 +33,7 @@
     padding: var(--unit-x2) var(--unit-x3);
     display: flex;
     align-items: center;
+    font-weight: bold;
   }
 
   span {

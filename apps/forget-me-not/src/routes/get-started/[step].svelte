@@ -10,7 +10,11 @@
 
   import { user, companion, lovedOne, memory } from '../../stores';
 
-  export let step: number;
+  export let step;
+
+  const handleBack = () => {
+    window.location.href = step > 1 ? `/get-started/${step - 1}` : '/';
+  };
 
   const handleNext = () => {
     window.location.href = `/get-started/${step + 1}`;
@@ -36,8 +40,10 @@
     flex-grow: 1;
   }
   footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--unit-x2);
     margin-top: auto;
-    width: 100%;
   }
 </style>
 
@@ -140,10 +146,7 @@
   {#if step === 8}
     <img src="/images/puppy.jpg" alt={$companion.name} />
 
-    <p>
-      Go ahead and explore the rest of the app. If you ever need my help, just
-      click on my face up there.
-    </p>
+    <p>Go ahead and explore the rest of the app.</p>
     <p>
       Together we'll treasure the memory of
       {$lovedOne.name}
@@ -152,10 +155,17 @@
   {/if}
 
   <footer>
+    <Button
+      label="Back"
+      type="button"
+      mode="secondary"
+      on:click={handleBack}
+      fullWidth
+    />
     {#if step === 8}
       <Button href="/" label="Home" icon={mdiHome} fullWidth />
     {:else}
-      <Button label="Next" icon={mdiArrowRight} iconRight fullWidth />
+      <Button label="Next" fullWidth />
     {/if}
   </footer>
 </form>

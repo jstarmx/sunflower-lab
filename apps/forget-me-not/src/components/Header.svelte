@@ -9,7 +9,7 @@
 
   export let auth;
   export let handleToggleMenu;
-  export let menuOpen;
+  export let menuOpen = false;
 </script>
 
 <style>
