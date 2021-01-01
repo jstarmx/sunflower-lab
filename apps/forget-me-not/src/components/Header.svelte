@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Button } from '@sunflower-lab/greenhouse';
   import { mdiMenu, mdiClose } from '@mdi/js';
 

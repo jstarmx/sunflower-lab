@@ -30,13 +30,12 @@
   }
 </style>
 
-<label>
-  {label}
-  {#if type === 'number'}
-    <input {placeholder} type="number" bind:value />
-  {:else if type === 'email'}
-    <input {placeholder} type="email" bind:value />
-  {:else if type === 'password'}
-    <input {placeholder} type="password" bind:value />
-  {:else}<input {placeholder} type="text" bind:value />{/if}
-</label>
+{#if type === 'number'}
+  <label>{label}<input {placeholder} type="number" bind:value /> </label>
+{:else if type === 'email'}
+  <label>{label}<input {placeholder} type="email" bind:value /> </label>
+{:else if type === 'password'}
+  <label>{label}<input {placeholder} type="password" bind:value /> </label>
+{:else}
+  <label>{label}<input {placeholder} type="text" bind:value /> </label>
+{/if}

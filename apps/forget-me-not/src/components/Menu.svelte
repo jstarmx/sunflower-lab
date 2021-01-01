@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import firebase from 'firebase/app';
   import { Icon } from '@sunflower-lab/greenhouse';
   import { mdiAccount } from '@mdi/js';

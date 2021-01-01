@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "apps/forget-me-not"
+    },
+    {
+      "path": "packages/greenhouse"
+    }
+  ],
+  "settings": {}
+}

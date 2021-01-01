@@ -4,8 +4,9 @@ import commonjs from '@rollup/plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
 import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
+import sveltePreprocess from 'svelte-preprocess';
+import typescript from '@rollup/plugin-typescript';
 import config from 'sapper/config/rollup';
-import css from 'rollup-plugin-css-only';
 
 import pkg from './package.json';
 
@@ -14,13 +15,15 @@ const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
 const onwarn = (warning, cb) =>
+  (warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
   (warning.code === 'CIRCULAR_DEPENDENCY' &&
     /[/\\]@sapper[/\\]/.test(warning.message)) ||
+  warning.code === 'THIS_IS_UNDEFINED' ||
   cb(warning);
 
 export default {
   client: {
-    input: config.client.input(),
+    input: config.client.input().replace(/\.js$/, '.ts'),
     output: config.client.output(),
     plugins: [
       replace({
@@ -30,6 +33,7 @@ export default {
       svelte({
         dev,
         hydratable: true,
+        preprocess: sveltePreprocess(),
         emitCss: true,
       }),
       resolve({
@@ -37,9 +41,7 @@ export default {
         dedupe: ['svelte'],
       }),
       commonjs(),
-      css({
-        output: `${config.client.output().dir}/greenhouse.global.css`,
-      }),
+      typescript({ sourceMap: dev, inlineSourceMap: dev, inlineSources: dev }),
 
       legacy &&
         babel({
@@ -76,7 +78,7 @@ export default {
   },
 
   server: {
-    input: config.server.input(),
+    input: { server: config.server.input().server.replace(/\.js$/, '.ts') },
     output: config.server.output(),
     plugins: [
       replace({
@@ -85,15 +87,18 @@ export default {
       }),
       svelte({
         generate: 'ssr',
+        hydratable: true,
+        preprocess: sveltePreprocess(),
         dev,
       }),
       resolve({
         dedupe: ['svelte'],
       }),
       commonjs(),
+      typescript({ sourceMap: dev }),
     ],
     external: Object.keys(pkg.dependencies).concat(
-      require('module').builtinModules || // eslint-disable-line global-require
+      require('module').builtinModules || // eslint-disable-line
         Object.keys(process.binding('natives')),
     ),
 
@@ -102,7 +107,7 @@ export default {
   },
 
   serviceworker: {
-    input: config.serviceworker.input(),
+    input: config.serviceworker.input().replace(/\.js$/, '.ts'),
     output: config.serviceworker.output(),
     plugins: [
       resolve(),
@@ -111,6 +116,7 @@ export default {
         'process.env.NODE_ENV': JSON.stringify(mode),
       }),
       commonjs(),
+      typescript({ sourceMap: dev, inlineSourceMap: dev, inlineSources: dev }),
       !dev && terser(),
     ],
 

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import firebase from 'firebase/app';
   import { mdiCheck } from '@mdi/js';
   import { Button, Input } from '@sunflower-lab/greenhouse';

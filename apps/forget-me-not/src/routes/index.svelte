@@ -1,17 +1,13 @@
-<script>
+<script lang="ts">
   import { Button } from '@sunflower-lab/greenhouse';
 
-  import user from '../models/user';
-
-  const lovedOneName = user.get('lovedOneName');
-  const name = user.get('lovedOneName');
+  import { user, lovedOne } from '../stores';
 </script>
 
 <style>
   section {
     display: flex;
     flex-direction: column;
-    padding: var(--unit-x5);
   }
 </style>
 
@@ -20,8 +16,10 @@
 </svelte:head>
 
 <section>
-  {#if lovedOneName && name}
-    Menu...
+  {#if $lovedOne.name && $user.name}
+    Hi
+    {$user.name}, lets talk about
+    {$lovedOne.name}
   {:else}
     <Button href="/get-started-1" label="Get started" />
   {/if}

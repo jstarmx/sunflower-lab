@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import firebase from 'firebase/app';
 
@@ -6,13 +6,13 @@
   import Auth from '../components/Auth.svelte';
   import Menu from '../components/Menu.svelte';
 
-  let auth;
+  let auth = null;
   let loading = true;
 
   onMount(async () => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        auth = user;
+    firebase.auth().onAuthStateChanged((authData) => {
+      if (authData) {
+        auth = authData;
       } else {
         auth = null;
       }
@@ -33,10 +33,16 @@
     grid-template-rows: min-content auto;
     height: 100%;
   }
+
+  .content {
+    display: grid;
+    height: 100%;
+    padding: var(--unit-x5);
+  }
 </style>
 
 <div class="container">
-  <Header {auth} {handleToggleMenu} {menuOpen} />
+  <Header {auth} {handleToggleMenu} />
 
   <main>
     {#if loading}
@@ -44,7 +50,9 @@
     {:else if menuOpen}
       <Menu />
     {:else if auth}
-      <slot />
+      <div class="content">
+        <slot />
+      </div>
     {:else}
       <Auth />
     {/if}
