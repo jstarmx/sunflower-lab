@@ -6,7 +6,7 @@
   "author": "James Starkie <jstar.mx@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint ./ --ext .js,.svelte"
+    "lint": "eslint ./ --ext .js,.ts,.svelte"
   },
   "husky": {
     "hooks": {
@@ -14,7 +14,7 @@
     }
   },
   "lint-staged": {
-    "*.js": [
+    "*.{js,ts}": [
       "eslint ./ --fix"
     ],
     "*.{json,md,svelte}": [
