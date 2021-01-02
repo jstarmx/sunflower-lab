@@ -21,6 +21,6 @@
     {$user.name}, lets talk about
     {$lovedOne.name}
   {:else}
-    <Button href="/get-started/1" label="Get started" />
+    <Button href="/get-started" label="Get started" />
   {/if}
 </section>

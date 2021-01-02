@@ -1,23 +1,17 @@
-<script lang="ts" context="module">
-  export async function preload(page) {
-    return { step: Number(page.params.step) };
-  }
-</script>
-
 <script lang="ts">
-  import { mdiArrowRight, mdiHome } from '@mdi/js';
+  import { mdiHome } from '@mdi/js';
   import { Button, Input, TextArea } from '@sunflower-lab/greenhouse';
 
-  import { user, companion, lovedOne, memory } from '../../stores';
+  import { user, companion, lovedOne, memory } from '../stores';
 
-  export let step;
+  let step = 1;
 
   const handleBack = () => {
-    window.location.href = step > 1 ? `/get-started/${step - 1}` : '/';
+    step -= 1;
   };
 
   const handleNext = () => {
-    window.location.href = `/get-started/${step + 1}`;
+    step += 1;
   };
 
   const handleYouChoose = () => {
@@ -81,8 +75,6 @@
       label="You choose"
       type="button"
       mode="secondary"
-      icon={mdiArrowRight}
-      iconRight
       fullWidth
     />
   {/if}
@@ -90,7 +82,7 @@
   {#if step === 3}
     <img src="/images/puppy.jpg" alt={$companion.name} />
 
-    {#if $companion.autoName}
+    {#if $companion.randomName}
       <p>Ooh {$companion.name}, I love it!</p>
     {:else}
       <p>Okay, I will call myself... {$companion.name}!</p>
@@ -155,13 +147,15 @@
   {/if}
 
   <footer>
-    <Button
-      label="Back"
-      type="button"
-      mode="secondary"
-      on:click={handleBack}
-      fullWidth
-    />
+    {#if step !== 1 && step !== 8}
+      <Button
+        label="Back"
+        type="button"
+        mode="secondary"
+        on:click={handleBack}
+        fullWidth
+      />
+    {:else}<span />{/if}
     {#if step === 8}
       <Button href="/" label="Home" icon={mdiHome} fullWidth />
     {:else}
