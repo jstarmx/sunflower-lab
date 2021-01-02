@@ -6,6 +6,10 @@
   import Auth from '../components/Auth.svelte';
   import Menu from '../components/Menu.svelte';
 
+  // Workaround to suppress console warning, see https://github.com/sveltejs/sapper/issues/824
+  export let segment;
+  segment = segment;
+
   let auth = null;
   let loading = true;
 
