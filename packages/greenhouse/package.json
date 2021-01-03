@@ -1,6 +1,6 @@
 {
   "name": "@sunflower-lab/greenhouse",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "scripts": {
     "build": "node ./scripts/build.js",
     "storybook": "start-storybook",
