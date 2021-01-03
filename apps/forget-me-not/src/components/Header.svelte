@@ -55,7 +55,7 @@
 </style>
 
 <header>
-  <a href="/"><img src="/images/logo-new.svg" alt="Forget-me-not logo" /></a>
+  <a href="/"><img src="/images/logo-circle.svg" alt="Forget-me-not logo" /></a>
   {#if lovedOneName && name}<button class="help" />{/if}
   {#if auth}
     <Button
