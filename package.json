@@ -1,12 +1,17 @@
 {
   "name": "sunflower-lab",
-  "version": "0.0.1",
+  "version": "0.10.0",
   "main": "index.js",
   "repository": "git@github.com:jstarmx/sunflower-lab.git",
   "author": "James Starkie <jstar.mx@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint ./ --ext .js,.ts,.svelte"
+    "lint": "eslint ./ --ext .js,.ts,.svelte",
+    "postinstall": "lerna bootstrap --hoist",
+    "dev": "lerna run --parallel build:watch",
+    "clean": "lerna run clean",
+    "build": "lerna run build",
+    "publish": "lerna publish"
   },
   "husky": {
     "hooks": {
@@ -32,6 +37,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-svelte3": "^2.7.3",
     "husky": "^4.2.5",
+    "lerna": "^3.22.1",
     "lint-staged": "^10.2.11",
     "prettier": "^2.2.1",
     "prettier-plugin-svelte": "^1.4.2",

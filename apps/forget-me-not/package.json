@@ -3,10 +3,8 @@
   "description": "",
   "version": "0.0.1",
   "scripts": {
-    "dev": "sapper dev",
-    "build": "sapper build --legacy",
-    "export": "sapper export --legacy --entry '/ get-started'",
-    "start": "node __sapper__/build",
+    "build:watch": "sapper dev",
+    "build": "sapper export --legacy --entry '/ get-started'",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run",

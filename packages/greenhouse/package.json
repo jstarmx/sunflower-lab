@@ -2,7 +2,8 @@
   "name": "@sunflower-lab/greenhouse",
   "version": "0.8.1",
   "scripts": {
-    "build": "node ./scripts/build.js",
+    "build": "npm run entry:build && npm run storybook:build",
+    "entry:build": "node ./scripts/build.js",
     "storybook": "start-storybook",
     "storybook:build": "build-storybook -c .storybook -o .out"
   },

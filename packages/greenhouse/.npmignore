@@ -1,7 +1,9 @@
+.out
 .storybook
+*.stories.js
 .vscode
 node_modules
+build
 .eslintignore
 .prettierrc
 .prettierignore
-
