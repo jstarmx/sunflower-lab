@@ -1,7 +1,7 @@
 {
   "name": "@sunflower-lab/forget-me-not",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.10.1",
   "scripts": {
     "build:watch": "sapper dev",
     "build": "sapper export --legacy --entry '/ get-started'",
@@ -31,7 +31,7 @@
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@rollup/plugin-replace": "^2.2.0",
     "@rollup/plugin-typescript": "^6.0.0",
-    "@sunflower-lab/greenhouse": "^0.8.1",
+    "@sunflower-lab/greenhouse": "^0.10.1",
     "@tsconfig/svelte": "^1.0.10",
     "@types/compression": "^1.7.0",
     "@types/node": "^14.11.1",
