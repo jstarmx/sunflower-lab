@@ -5,6 +5,8 @@
   "scripts": {
     "build:watch": "sapper dev",
     "build": "sapper export --legacy --entry '/ get-started'",
+    "deploy": "firebase deploy --token $FIREBASE_TOKEN",
+    "publish": "npm run build && npm run deploy",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run",
@@ -14,6 +16,7 @@
     "@mdi/js": "^5.3.45",
     "compression": "^1.7.1",
     "firebase": "^8.0.2",
+    "firebase-tools": "^9.1.0",
     "polka": "next",
     "sirv": "^0.4.0"
   },
