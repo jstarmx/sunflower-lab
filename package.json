@@ -11,7 +11,7 @@
     "dev": "lerna run --parallel build:watch",
     "clean": "lerna run clean",
     "build": "lerna run build",
-    "publish": "lerna publish"
+    "publish": "lerna publish --no-git-tag-version"
   },
   "husky": {
     "hooks": {
