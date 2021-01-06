@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -16,4 +16,4 @@ jobs:
         run: |
           npm ci
           export FIREBASE_TOKEN=${{ secrets.FIREBASE_TOKEN }}
-          npm run publish
+          npm run publish -- --yes
