@@ -1,6 +1,6 @@
 {
   "name": "@sunflower-lab/forget-me-not",
-  "description": "",
+  "description": "Forget-me-not",
   "version": "0.10.6",
   "scripts": {
     "build:watch": "sapper dev",
