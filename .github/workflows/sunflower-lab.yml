@@ -1,17 +1,13 @@
-name: Greenhouse
+name: Sunflower Lab
 
-on:
-  push:
-    paths:
-      - 'packages/greenhouse/**'
-      - '.github/workflows/greenhouse.yml'
+on: push
 
 jobs:
   storybook:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: 12
       - name: build storybook
@@ -30,8 +26,8 @@ jobs:
   package:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
@@ -48,3 +44,24 @@ jobs:
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  build:
+    needs: package
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12.x
+      - name: npm install and build
+        working-directory: apps/forget-me-not
+        run: |
+          npm ci
+          npm run export
+      - name: deploy to firebase
+        working-directory: apps/forget-me-not
+        run: |
+          npm install -g firebase-tools
+          firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}

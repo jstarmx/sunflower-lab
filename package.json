@@ -5,6 +5,11 @@
   "repository": "git@github.com:jstarmx/sunflower-lab.git",
   "author": "James Starkie <jstar.mx@gmail.com>",
   "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "lint": "eslint ./ --ext .js,.ts,.svelte"
   },
