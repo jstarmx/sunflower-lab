@@ -3,7 +3,7 @@ name: Sunflower Lab
 on:
   release:
     types:
-      - created
+      - published
 
 jobs:
   build:
