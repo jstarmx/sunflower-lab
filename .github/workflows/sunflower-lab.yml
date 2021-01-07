@@ -10,10 +10,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 12
+      - name: install dependencies
+        run: |
+          yarn install
       - name: build storybook
         working-directory: packages/greenhouse
         run: |
-          yarn install
           yarn storybook:build
       - name: deploy to pages
         uses: JamesIves/github-pages-deploy-action@master
@@ -31,6 +33,9 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
+      - name: install dependencies
+        run: |
+          yarn install
       - name: publish to npm
         working-directory: packages/greenhouse
         run: |
@@ -38,7 +43,6 @@ jobs:
           PUBLISHED_VERSION=$(npm show @sunflower-lab/greenhouse version)
           if [ $PACKAGE_VERSION != $PUBLISHED_VERSION ]
           then
-            yarn install
             yarn build
             yarn publish --access public
           fi
@@ -55,13 +59,15 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 12.x
-      - name: npm install and build
-        working-directory: apps/forget-me-not
+      - name: install dependencies
         run: |
           yarn install
+          yarn install -g firebase-tools
+      - name: build app
+        working-directory: apps/forget-me-not
+        run: |
           yarn export
       - name: deploy to firebase
         working-directory: apps/forget-me-not
         run: |
-          yarn install -g firebase-tools
           firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
