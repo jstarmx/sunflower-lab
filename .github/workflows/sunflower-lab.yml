@@ -1,7 +1,8 @@
 name: Sunflower Lab
 
 on:
-  release:
+  push:
+    tags:
 
 jobs:
   build:
