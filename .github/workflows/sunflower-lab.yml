@@ -2,8 +2,6 @@ name: Sunflower Lab
 
 on:
   release:
-    types:
-      - published
 
 jobs:
   build:
