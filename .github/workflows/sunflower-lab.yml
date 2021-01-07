@@ -62,7 +62,7 @@ jobs:
       - name: install dependencies
         run: |
           yarn install
-          yarn install -g firebase-tools
+          yarn global add firebase-tools
       - name: build app
         working-directory: apps/forget-me-not
         run: |
