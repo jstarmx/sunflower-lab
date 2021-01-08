@@ -63,9 +63,8 @@ jobs:
         run: |
           yarn install
       - name: build app and deploy
-        working-directory: apps/forget-me-not
         run: |
-          yarn export
-          yarn deploy
+          yarn workspace @sunflower-lab/forget-me-not run build
+          yarn workspace @sunflower-lab/forget-me-not run deploy
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
