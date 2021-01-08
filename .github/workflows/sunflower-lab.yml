@@ -62,7 +62,9 @@ jobs:
       - name: install dependencies
         run: |
           yarn install
-          yarn workspace @sunflower-lab/forget-me-not run build
-          yarn workspace @sunflower-lab/forget-me-not run deploy
+          cd apps/forget-me-not
+          yarn info @sunflower-lab/greenhouse
+          yarn build
+          yarn deploy
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
