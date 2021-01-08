@@ -37,7 +37,6 @@ export default {
         emitCss: true,
       }),
       resolve({
-        browser: true,
         dedupe: ['svelte'],
       }),
       commonjs(),
