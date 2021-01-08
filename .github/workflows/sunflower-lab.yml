@@ -62,8 +62,6 @@ jobs:
       - name: install dependencies
         run: |
           yarn install
-      - name: build app and deploy
-        run: |
           yarn workspace @sunflower-lab/forget-me-not run build
           yarn workspace @sunflower-lab/forget-me-not run deploy
         env:
