@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@mdi/js": "^5.3.45",
-    "@sunflower-lab/greenhouse": "workspace:*",
     "compression": "^1.7.1",
     "firebase": "^8.0.2",
     "firebase-tools": "9.1.2",
@@ -33,6 +32,7 @@
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@rollup/plugin-replace": "^2.2.0",
     "@rollup/plugin-typescript": "^6.0.0",
+    "@sunflower-lab/greenhouse": "workspace:*",
     "@tsconfig/svelte": "^1.0.10",
     "@types/compression": "^1.7.0",
     "@types/node": "^14.11.1",
