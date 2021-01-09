@@ -1,29 +1,32 @@
 name: Sunflower Lab
 
-on: push
+on:
+  push:
+    branches:
+      - master
 
 jobs:
-  # storybook:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/setup-node@v2
-  #       with:
-  #         node-version: 12
-  #     - name: install dependencies
-  #       run: |
-  #         yarn install
-  #     - name: build storybook
-  #       working-directory: packages/greenhouse
-  #       run: |
-  #         yarn storybook:build
-  #     - name: deploy to pages
-  #       uses: JamesIves/github-pages-deploy-action@master
-  #       env:
-  #         ACCESS_TOKEN: ${{ secrets.GITHUB_PAGES_TOKEN }}
-  #         BASE_BRANCH: master
-  #         BRANCH: gh-pages
-  #         FOLDER: packages/greenhouse/.out
+  storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12
+      - name: install dependencies
+        run: |
+          yarn install
+      - name: build storybook
+        working-directory: packages/greenhouse
+        run: |
+          yarn storybook:build
+      - name: deploy to pages
+        uses: JamesIves/github-pages-deploy-action@master
+        env:
+          ACCESS_TOKEN: ${{ secrets.GITHUB_PAGES_TOKEN }}
+          BASE_BRANCH: master
+          BRANCH: gh-pages
+          FOLDER: packages/greenhouse/.out
 
   deploy:
     runs-on: ubuntu-latest
