@@ -41,7 +41,7 @@ jobs:
         run: |
           yarn build
       - name: Build and deploy apps
-        working-directory: packages/greenhouse
+        working-directory: apps/forget-me-not
         run: |
           yarn export
           yarn deploy
