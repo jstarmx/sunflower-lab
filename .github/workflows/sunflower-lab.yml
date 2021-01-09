@@ -33,21 +33,23 @@ jobs:
   #       with:
   #         node-version: 12
   #         registry-url: https://registry.npmjs.org/
-  #     - name: install dependencies
+  #     - name: Install dependencies and build
   #       run: |
   #         yarn install
-  #     - name: publish to npm
-  #       working-directory: packages/greenhouse
-  #       run: |
-  #         PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
-  #         PUBLISHED_VERSION=$(npm show @sunflower-lab/greenhouse version)
-  #         if [ $PACKAGE_VERSION != $PUBLISHED_VERSION ]
-  #         then
-  #           yarn build
-  #           yarn publish --access public
-  #         fi
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  #         cd packages/greenhouse
+  #         yarn build
+  # - name: publish to npm
+  #   working-directory: packages/greenhouse
+  #   run: |
+  #     PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
+  #     PUBLISHED_VERSION=$(npm show @sunflower-lab/greenhouse version)
+  #     if [ $PACKAGE_VERSION != $PUBLISHED_VERSION ]
+  #     then
+  #       yarn build
+  #       yarn publish --access public
+  #     fi
+  #   env:
+  #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   build:
     # needs: package
@@ -59,10 +61,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 12.x
-      - name: install dependencies
+      - name: Install dependencies, build and deploy
         run: |
           yarn install
-          cd apps/forget-me-not
+          cd packages/greenhouse
+          yarn build
+          cd ../../apps/forget-me-not
           yarn info @sunflower-lab/greenhouse
           yarn build
           yarn deploy
