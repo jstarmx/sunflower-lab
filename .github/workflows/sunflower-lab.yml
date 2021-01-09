@@ -25,48 +25,24 @@ jobs:
   #         BRANCH: gh-pages
   #         FOLDER: packages/greenhouse/.out
 
-  # package:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/setup-node@v2
-  #       with:
-  #         node-version: 12
-  #         registry-url: https://registry.npmjs.org/
-  #     - name: Install dependencies and build
-  #       run: |
-  #         yarn install
-  #         cd packages/greenhouse
-  #         yarn build
-  # - name: publish to npm
-  #   working-directory: packages/greenhouse
-  #   run: |
-  #     PACKAGE_VERSION=$(node -p -e "require('./package.json').version")
-  #     PUBLISHED_VERSION=$(npm show @sunflower-lab/greenhouse version)
-  #     if [ $PACKAGE_VERSION != $PUBLISHED_VERSION ]
-  #     then
-  #       yarn build
-  #       yarn publish --access public
-  #     fi
-  #   env:
-  #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-  build:
-    # needs: package
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 12.x
         uses: actions/setup-node@v2
         with:
           node-version: 12.x
-      - name: Install dependencies, build and deploy
+      - name: Install dependencies
         run: |
           yarn install
-          cd packages/greenhouse
+      - name: Build packages
+        working-directory: packages/greenhouse
+        run: |
           yarn build
-          cd ../../apps/forget-me-not
+      - name: Build and deploy apps
+        working-directory: packages/greenhouse
+        run: |
           yarn export
           yarn deploy
         env:
