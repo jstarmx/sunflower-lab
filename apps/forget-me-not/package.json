@@ -6,6 +6,7 @@
     "dev": "sapper dev",
     "build": "sapper build --legacy",
     "export": "sapper export --legacy --entry '/ get-started'",
+    "deploy": "firebase deploy --token $FIREBASE_TOKEN",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
@@ -16,6 +17,7 @@
     "@mdi/js": "^5.3.45",
     "compression": "^1.7.1",
     "firebase": "^8.0.2",
+    "firebase-tools": "9.1.2",
     "polka": "next",
     "sirv": "^0.4.0"
   },
@@ -30,7 +32,7 @@
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@rollup/plugin-replace": "^2.2.0",
     "@rollup/plugin-typescript": "^6.0.0",
-    "@sunflower-lab/greenhouse": "^0.8.1",
+    "@sunflower-lab/greenhouse": "workspace:*",
     "@tsconfig/svelte": "^1.0.10",
     "@types/compression": "^1.7.0",
     "@types/node": "^14.11.1",
@@ -45,6 +47,6 @@
     "svelte-check": "^1.0.46",
     "svelte-preprocess": "^4.3.0",
     "tslib": "^2.0.1",
-    "typescript": "^4.0.3"
+    "typescript": "^4.1.3"
   }
 }
