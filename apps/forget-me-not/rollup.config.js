@@ -7,6 +7,8 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import config from 'sapper/config/rollup';
+import visualizer from 'rollup-plugin-visualizer';
+import analyze from 'rollup-plugin-analyzer';
 
 import pkg from './package.json';
 
@@ -42,6 +44,10 @@ export default {
       }),
       commonjs(),
       typescript({ sourceMap: dev, inlineSourceMap: dev, inlineSources: dev }),
+      visualizer(),
+      analyze({
+        summaryOnly: true,
+      }),
 
       legacy &&
         babel({
@@ -117,6 +123,9 @@ export default {
       }),
       commonjs(),
       typescript({ sourceMap: dev, inlineSourceMap: dev, inlineSources: dev }),
+      analyze({
+        summaryOnly: true,
+      }),
       !dev && terser(),
     ],
 
