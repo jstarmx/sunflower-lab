@@ -77,7 +77,7 @@
 </style>
 
 <div class="container">
-  <div class="item"></div>
+  <div class="item" />
   <div class="item heading">Inverse</div>
   <div class="item heading">Light</div>
   <div class="item heading">Default</div>

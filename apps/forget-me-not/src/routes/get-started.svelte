@@ -4,13 +4,13 @@
 
   import { user, companion, lovedOne, memory } from '../stores';
 
-  let step = 1;
+  let step: number = 1;
 
-  const handleBack = () => {
+  const handleBack = (): void => {
     step -= 1;
   };
 
-  const handleNext = () => {
+  const handleNext = (): void => {
     step += 1;
   };
 

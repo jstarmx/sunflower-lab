@@ -4062,11 +4062,11 @@ __metadata:
     rollup-plugin-svelte: ^6.1.1
     rollup-plugin-terser: ^7.0.2
     rollup-plugin-visualizer: ^4.2.0
-    sapper: ^0.28.10
+    sapper: ^0.29.1
     sirv: ^0.4.0
-    svelte: ^3.31.0
-    svelte-check: ^1.0.46
-    svelte-preprocess: ^4.3.0
+    svelte: ^3.37.0
+    svelte-check: ^1.3.0
+    svelte-preprocess: ^4.7.0
     tslib: ^2.0.1
     typescript: ^4.1.3
   languageName: unknown
@@ -8484,13 +8484,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-svelte3@npm:^2.7.3":
-  version: 2.7.3
-  resolution: "eslint-plugin-svelte3@npm:2.7.3"
+"eslint-plugin-svelte3@npm:^3.1.2":
+  version: 3.1.2
+  resolution: "eslint-plugin-svelte3@npm:3.1.2"
   peerDependencies:
     eslint: ">=6.0.0"
     svelte: ^3.2.0
-  checksum: bf608cd53ce2771656f09fd3ea137ca168e6360e8b1a77ed5de0e5e5d3d51ee94e62a546c73dfcfed6100d3dd8e8a8a33b614ced1f96db803b15fdd71dd8dda6
+  checksum: a20088f614f6306ba69305c74ff72effdf2f150038f08de375a10a947e41078b82d2394916b1a566d9723a7724cd0c6984d1e78913fc3ecf4b26f885b609207e
   languageName: node
   linkType: hard
 
@@ -14557,13 +14557,13 @@ polka@next:
   languageName: node
   linkType: hard
 
-"prettier-plugin-svelte@npm:^1.4.2":
-  version: 1.4.2
-  resolution: "prettier-plugin-svelte@npm:1.4.2"
+"prettier-plugin-svelte@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "prettier-plugin-svelte@npm:2.2.0"
   peerDependencies:
     prettier: ^1.16.4 || ^2.0.0
     svelte: ^3.2.0
-  checksum: 2582f2d56dbc4382f25b711b1808597cba14b1a1a2239755e294f80d86a7304236dc265622326a61945aab5b0fd5c73aca3ffaacbe63c0aaff6e1a49adee6703
+  checksum: 80835696c33995c0fac921f4d1f0481aa712bbaafa52ae1f663b2582d11be2937f0597bd6e9d14b23e4093bc2ff17b6b42ee0ffa9c0d8200bf982a708a2f362d
   languageName: node
   linkType: hard
 
@@ -16020,13 +16020,13 @@ polka@next:
   languageName: node
   linkType: hard
 
-"sapper@npm:^0.28.10":
-  version: 0.28.10
-  resolution: "sapper@npm:0.28.10"
+"sapper@npm:^0.29.1":
+  version: 0.29.1
+  resolution: "sapper@npm:0.29.1"
   dependencies:
     html-minifier: ^4.0.0
     http-link-header: ^1.0.2
-    shimport: ^2.0.4
+    shimport: ^2.0.5
     source-map: ^0.6.1
     sourcemap-codec: ^1.4.6
     string-hash: ^1.1.3
@@ -16034,7 +16034,7 @@ polka@next:
     svelte: ^3.17.3
   bin:
     sapper: sapper
-  checksum: fd5ab59b11d6d18da46f3aedad5d8cb5faf522f64963a0858e75df342f759f0640ad696438925170426921a3f2d95f5d90fe3dd80fece0679fc45fd381547793
+  checksum: 214bf7463351e25cde4d4c9bb36b8ed67d390a16197813a8ee340ab649c780b3254218f0f84b3ff591ca65c6950484718f9f8fd6488d3de956c601bdaf002470
   languageName: node
   linkType: hard
 
@@ -16337,7 +16337,7 @@ polka@next:
   languageName: node
   linkType: hard
 
-"shimport@npm:^2.0.4":
+"shimport@npm:^2.0.5":
   version: 2.0.5
   resolution: "shimport@npm:2.0.5"
   checksum: 70d906f6ace71593edd24f68dd6c1d32587073777e94bfc81d25827108d951ed279a407e6c68c870a9cea426e1d739ae1d7a3df4156da9112bd88188c826083c
@@ -17022,12 +17022,12 @@ polka@next:
     eslint-plugin-cypress: ^2.11.2
     eslint-plugin-import: ^2.22.1
     eslint-plugin-prettier: ^3.1.4
-    eslint-plugin-svelte3: ^2.7.3
+    eslint-plugin-svelte3: ^3.1.2
     husky: ^4.2.5
     lint-staged: ^10.2.11
     prettier: ^2.2.1
-    prettier-plugin-svelte: ^1.4.2
-    svelte: ^3.31.0
+    prettier-plugin-svelte: ^2.2.0
+    svelte: ^3.37.0
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -17114,9 +17114,9 @@ polka@next:
   languageName: node
   linkType: hard
 
-"svelte-check@npm:^1.0.46":
-  version: 1.1.25
-  resolution: "svelte-check@npm:1.1.25"
+"svelte-check@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "svelte-check@npm:1.3.0"
   dependencies:
     chalk: ^4.0.0
     chokidar: ^3.4.1
@@ -17130,7 +17130,7 @@ polka@next:
     svelte: ^3.24.0
   bin:
     svelte-check: bin/svelte-check
-  checksum: 2d924cf4e81a0c7fbc8b3e34ec9686878a7427ed4c1aa22453b68ae869b590b019ab0f3f4866b12b12a6ef54971318d15eda4966eb07d99495d09dfcb90ec7b9
+  checksum: 51e10d094b16dbf4dec91361c4cd0ed3c7638a1d733a4145149fd796326bcc6b07e6d03815ea102dec73c17a3d3c102a3eaf5ebce935b58ffc92e4d2cf74d744
   languageName: node
   linkType: hard
 
@@ -17153,7 +17153,7 @@ polka@next:
   languageName: node
   linkType: hard
 
-"svelte-preprocess@npm:^4.0.0, svelte-preprocess@npm:^4.3.0":
+"svelte-preprocess@npm:^4.0.0":
   version: 4.6.1
   resolution: "svelte-preprocess@npm:4.6.1"
   dependencies:
@@ -17200,17 +17200,57 @@ polka@next:
   languageName: node
   linkType: hard
 
-"svelte@npm:3.37.0":
-  version: 3.37.0
-  resolution: "svelte@npm:3.37.0"
-  checksum: fc7a1e9b641fbe938bd666b1d82433b5f262eb680635097bdf85f50753365c1fe5d51d387eadb3145b389df20f71e0576ba592cebfc44a2120971c96c4367f75
+"svelte-preprocess@npm:^4.7.0":
+  version: 4.7.0
+  resolution: "svelte-preprocess@npm:4.7.0"
+  dependencies:
+    "@types/pug": ^2.0.4
+    "@types/sass": ^1.16.0
+    detect-indent: ^6.0.0
+    strip-indent: ^3.0.0
+  peerDependencies:
+    "@babel/core": ^7.10.2
+    coffeescript: ^2.5.1
+    less: ^3.11.3
+    postcss: ^7 || ^8
+    postcss-load-config: ^2.1.0 || ^3.0.0
+    pug: ^3.0.0
+    sass: ^1.26.8
+    stylus: ^0.54.7
+    sugarss: ^2.0.0
+    svelte: ^3.23.0
+    typescript: ^3.9.5 || ^4.0.0
+  peerDependenciesMeta:
+    "@babel/core":
+      optional: true
+    coffeescript:
+      optional: true
+    less:
+      optional: true
+    node-sass:
+      optional: true
+    postcss:
+      optional: true
+    postcss-load-config:
+      optional: true
+    pug:
+      optional: true
+    sass:
+      optional: true
+    stylus:
+      optional: true
+    sugarss:
+      optional: true
+    typescript:
+      optional: true
+  checksum: 8e06034f4df715b4b79b304367a576cf132ecec8aa5c94b3b200e2ca850ea6b1e2f951a0ec85a0cc0542223822d71484add94fa264b81f27755d9eaaa25132ed
   languageName: node
   linkType: hard
 
-"svelte@npm:^3.31.0":
-  version: 3.31.2
-  resolution: "svelte@npm:3.31.2"
-  checksum: 51f5936a4d9a71f8aebf9aa44685946024e9659df439b5f96e0f24799997182deacfa5ad09f9c70b5023255435be6a8a527b8a6317a70690255219a6d30edbe3
+"svelte@npm:3.37.0, svelte@npm:^3.37.0":
+  version: 3.37.0
+  resolution: "svelte@npm:3.37.0"
+  checksum: fc7a1e9b641fbe938bd666b1d82433b5f262eb680635097bdf85f50753365c1fe5d51d387eadb3145b389df20f71e0576ba592cebfc44a2120971c96c4367f75
   languageName: node
   linkType: hard
 
