@@ -1,16 +1,19 @@
 import { mdiAccount, mdiArrowRight } from '@mdi/js';
+
 import Button from './Button.svelte';
+
+import type { StorybookSvelte } from '../../types';
 
 export default { title: 'Components/Button' };
 
-export const primary = () => ({
+export const primary = (): StorybookSvelte.Component => ({
   Component: Button,
   props: {
     label: 'Click Me',
   },
 });
 
-export const secondary = () => ({
+export const secondary = (): StorybookSvelte.Component => ({
   Component: Button,
   props: {
     label: 'Click Me',
@@ -18,7 +21,7 @@ export const secondary = () => ({
   },
 });
 
-export const asLink = () => ({
+export const asLink = (): StorybookSvelte.Component => ({
   Component: Button,
   props: {
     label: "I'm a link",
@@ -26,7 +29,7 @@ export const asLink = () => ({
   },
 });
 
-export const withIcon = () => ({
+export const withIcon = (): StorybookSvelte.Component => ({
   Component: Button,
   props: {
     label: 'Click Me',
@@ -34,7 +37,7 @@ export const withIcon = () => ({
   },
 });
 
-export const withIconOnRight = () => ({
+export const withIconOnRight = (): StorybookSvelte.Component => ({
   Component: Button,
   props: {
     label: 'Click Me',
@@ -43,7 +46,7 @@ export const withIconOnRight = () => ({
   },
 });
 
-export const fullWidth = () => ({
+export const fullWidth = (): StorybookSvelte.Component => ({
   Component: Button,
   props: {
     label: 'Click Me',
@@ -51,7 +54,7 @@ export const fullWidth = () => ({
   },
 });
 
-export const fullWidthWithIcon = () => ({
+export const fullWidthWithIcon = (): StorybookSvelte.Component => ({
   Component: Button,
   props: {
     label: 'Click Me',
@@ -60,7 +63,7 @@ export const fullWidthWithIcon = () => ({
   },
 });
 
-export const fullWidthWithIconOnRight = () => ({
+export const fullWidthWithIconOnRight = (): StorybookSvelte.Component => ({
   Component: Button,
   props: {
     label: 'Click Me',
