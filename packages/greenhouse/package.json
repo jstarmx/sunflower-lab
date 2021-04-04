@@ -12,7 +12,8 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
-  "types": "./src/types/index.d.ts",
+  "main": "index.js",
+  "types": "types.d.ts",
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@mdi/js": "^4.5.95",

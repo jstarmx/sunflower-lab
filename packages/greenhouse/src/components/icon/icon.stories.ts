@@ -2,7 +2,7 @@ import { mdiAccount } from '@mdi/js';
 
 import Icon from './Icon.svelte';
 
-import type { StorybookSvelte } from '../../types';
+import type { StorybookSvelte } from '../../types/storybook';
 
 export default {
   title: 'Components/Icon',

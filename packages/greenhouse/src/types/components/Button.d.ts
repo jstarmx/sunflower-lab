@@ -40,10 +40,4 @@ export interface ButtonProps {
   type?: 'submit' | 'button';
 }
 
-export default class Button extends SvelteComponentTyped<
-  ButtonProps,
-  {
-    click: WindowEventMap['click'];
-  },
-  Record<string, unknown>
-> {}
+export default class Button extends SvelteComponentTyped<ButtonProps> {}

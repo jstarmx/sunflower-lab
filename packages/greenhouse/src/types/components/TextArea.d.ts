@@ -20,8 +20,4 @@ export interface TextAreaProps {
   rows?: number;
 }
 
-export default class TextArea extends SvelteComponentTyped<
-  TextAreaProps,
-  Record<string, unknown>,
-  Record<string, unknown>
-> {}
+export default class TextArea extends SvelteComponentTyped<TextAreaProps> {}

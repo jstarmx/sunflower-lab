@@ -20,8 +20,4 @@ export interface InputProps {
   type?: 'text' | 'number' | 'email' | 'password';
 }
 
-export default class Input extends SvelteComponentTyped<
-  InputProps,
-  Record<string, unknown>,
-  Record<string, unknown>
-> {}
+export default class Input extends SvelteComponentTyped<InputProps> {}

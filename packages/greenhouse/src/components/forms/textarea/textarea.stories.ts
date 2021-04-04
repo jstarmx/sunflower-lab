@@ -1,6 +1,6 @@
 import TextArea from './TextArea.svelte';
 
-import type { StorybookSvelte } from '../../../types';
+import type { StorybookSvelte } from '../../../types/storybook';
 
 export default { title: 'Components/TextArea' };
 

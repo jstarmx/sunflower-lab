@@ -1,6 +1,6 @@
 import Input from './Input.svelte';
 
-import type { StorybookSvelte } from '../../../types';
+import type { StorybookSvelte } from '../../../types/storybook';
 
 export default { title: 'Components/Input' };
 

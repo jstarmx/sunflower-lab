@@ -2,7 +2,7 @@ import { mdiAccount, mdiArrowRight } from '@mdi/js';
 
 import Button from './Button.svelte';
 
-import type { StorybookSvelte } from '../../types';
+import type { StorybookSvelte } from '../../types/storybook';
 
 export default { title: 'Components/Button' };
 
