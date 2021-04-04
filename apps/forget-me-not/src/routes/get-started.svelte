@@ -53,7 +53,11 @@
     </p>
     <p>Would you like to tell me your name?</p>
 
-    <Input placeholder="Enter your name here..." bind:value={$user.name} />
+    <Input
+      label="Your name"
+      placeholder="Enter your name here..."
+      bind:value={$user.name}
+    />
   {/if}
 
   {#if step === 2}
@@ -66,6 +70,7 @@
     </p>
 
     <Input
+      label="My new name"
       placeholder="Enter my new name here..."
       bind:value={$companion.name}
     />
@@ -83,9 +88,9 @@
     <img src="/images/puppy.jpg" alt={$companion.name} />
 
     {#if $companion.randomName}
-      <p>Ooh {$companion.name}, I love it!</p>
-    {:else}
       <p>Okay, I will call myself... {$companion.name}!</p>
+    {:else}
+      <p>Ooh {$companion.name}, I love it!</p>
     {/if}
 
     <p>
@@ -93,7 +98,11 @@
       you remember?
     </p>
 
-    <Input placeholder="Enter their name here..." bind:value={$lovedOne.name} />
+    <Input
+      label="Their name"
+      placeholder="Enter their name here..."
+      bind:value={$lovedOne.name}
+    />
   {/if}
 
   {#if step === 4}
@@ -113,13 +122,18 @@
 
   {#if step === 5}
     <p>Give your memory a title:</p>
-    <Input placeholder="Enter a title here..." bind:value={$memory.title} />
+    <Input
+      label="Title"
+      placeholder="Enter a title here..."
+      bind:value={$memory.title}
+    />
   {/if}
 
   {#if step === 6}
     <p>Tell the story of your memory:</p>
     <p>(P.S. remember you can come back to it later!)</p>
     <TextArea
+      label="Your story"
       placeholder="Enter your story here..."
       bind:value={$memory.story}
     />

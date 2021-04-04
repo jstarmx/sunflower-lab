@@ -1,8 +1,8 @@
-import SvelteComponentDev from '*.svelte';
+import SvelteComponent from '*.svelte';
 
 declare namespace StorybookSvelte {
   type Component = {
-    Component: Partial<SvelteComponentDev>;
+    Component: Partial<SvelteComponent>;
     props?: Record<string, unknown>;
   };
 }

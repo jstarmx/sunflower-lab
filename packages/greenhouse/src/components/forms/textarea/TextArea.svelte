@@ -1,15 +1,20 @@
 <script>
   export let placeholder = '';
+  export let label = '';
   export let value = '';
   export let rows = 6;
 </script>
 
 <style>
+  label {
+    color: var(--mono-inverse);
+  }
+
   textarea {
     border-radius: var(--unit-x2);
     border: var(--unit-sm) solid var(--mono-light);
     color: var(--primary);
-    margin: 0 0 var(--unit-x3);
+    margin: var(--unit) 0 var(--unit-x3);
     padding: var(--unit-x2) var(--unit-x3);
     width: 100%;
   }
@@ -25,4 +30,7 @@
   }
 </style>
 
-<textarea {placeholder} {rows} bind:value />
+<label
+  >{label}
+  <textarea {placeholder} {rows} bind:value />
+</label>

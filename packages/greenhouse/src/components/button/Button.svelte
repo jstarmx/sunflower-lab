@@ -2,7 +2,7 @@
   import ButtonContent from './ButtonContent.svelte';
 
   export let label;
-  export let mode = '';
+  export let mode = 'primary';
   export let href = '';
   export let icon = '';
   export let type = 'submit';
