@@ -14,7 +14,7 @@
     step += 1;
   };
 
-  const handleYouChoose = () => {
+  const handleYouChoose = (): void => {
     companion.set({ name: 'Sam', randomName: true });
     handleNext();
   };
@@ -25,14 +25,17 @@
     margin-left: auto;
     width: 66%;
   }
+
   form {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
   }
+
   :global(textarea) {
     flex-grow: 1;
   }
+
   footer {
     display: grid;
     grid-template-columns: 1fr 1fr;

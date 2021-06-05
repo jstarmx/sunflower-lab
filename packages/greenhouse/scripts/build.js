@@ -29,7 +29,7 @@ const generateTypesFile = () => {
     output += `export { default as ${path.basename(
       file,
       '.d.ts',
-    )} } from '${file}';\n`;
+    )} } from '${file.replace('.d.ts', '')}';\n`;
   });
 
   fs.writeFileSync('./types.d.ts', output);

@@ -2,10 +2,10 @@
   import { Button } from '@sunflower-lab/greenhouse';
   import { mdiMenu, mdiClose } from '@mdi/js';
 
-  import user from '../models/user';
+  import { user, lovedOne } from '../stores';
 
-  const lovedOneName = user.get('lovedOneName');
-  const name = user.get('lovedOneName');
+  const lovedOneName = $user && $user.name;
+  const name = $lovedOne && $lovedOne.name;
 
   export let auth;
   export let handleToggleMenu;

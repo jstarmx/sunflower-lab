@@ -45,9 +45,6 @@ export default {
       commonjs(),
       typescript({ sourceMap: dev, inlineSourceMap: dev, inlineSources: dev }),
       visualizer(),
-      analyze({
-        summaryOnly: true,
-      }),
 
       legacy &&
         babel({
@@ -72,6 +69,8 @@ export default {
             ],
           ],
         }),
+
+      !dev && analyze(),
 
       !dev &&
         terser({
@@ -123,9 +122,7 @@ export default {
       }),
       commonjs(),
       typescript({ sourceMap: dev, inlineSourceMap: dev, inlineSources: dev }),
-      analyze({
-        summaryOnly: true,
-      }),
+      !dev && analyze(),
       !dev && terser(),
     ],
 
