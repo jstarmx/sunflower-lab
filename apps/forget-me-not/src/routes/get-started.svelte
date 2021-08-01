@@ -145,7 +145,9 @@
   {#if step === 7}
     <img src="/images/puppy.jpg" alt={$companion.name} />
 
-    <p>Thanks {$user.name}, I've put that in your memory jar!</p>
+    <p>
+      Thanks {$user.name}, I've put that in your <strong>memory jar!</strong>
+    </p>
     <p>
       You can return to your memory jar any time you want to save another memory
       look back on the ones you've already saved.
@@ -155,7 +157,10 @@
   {#if step === 8}
     <img src="/images/puppy.jpg" alt={$companion.name} />
 
-    <p>Go ahead and explore the rest of the app.</p>
+    <p>
+      Go ahead and explore the rest of the app. If you ever need help, just give
+      my face up there a tap.
+    </p>
     <p>
       Together we'll treasure the memory of
       {$lovedOne.name}
