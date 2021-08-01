@@ -5,6 +5,8 @@
   export let mode = 'primary';
   export let href = '';
   export let icon = '';
+  export let image = '';
+  export let imageHeight = 4;
   export let type = 'submit';
   export let iconRight = false;
   export let fullWidth = false;
@@ -37,7 +39,8 @@
     display: inline-flex;
     font-weight: bold;
     line-height: var(--unit-x4);
-    padding: var(--unit) var(--unit-x3);
+    min-height: var(--unit-x9);
+    padding: var(--unit) var(--unit-x2);
     margin: var(--unit-x2) 0 0;
     position: relative;
     justify-content: center;
@@ -45,7 +48,7 @@
     width: fit-content;
   }
 
-  button:focus {
+  .button:focus {
     box-shadow: 0 0 0 var(--unit) var(--secondary-light);
     outline: none;
   }
@@ -80,10 +83,10 @@
 
 {#if href}
   <a {href} class="button {classModifer}">
-    <ButtonContent {icon} {label} />
+    <ButtonContent {icon} {label} {image} {imageHeight} />
   </a>
 {:else}
   <button {type} class="button {classModifer}" on:click>
-    <ButtonContent {icon} {label} />
+    <ButtonContent {icon} {label} {image} {imageHeight} />
   </button>
 {/if}

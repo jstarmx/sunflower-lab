@@ -46,6 +46,13 @@ export const withIconOnRight = (): StorybookSvelte.Component => ({
   },
 });
 
+export const iconOnly = (): StorybookSvelte.Component => ({
+  Component: Button,
+  props: {
+    icon: mdiAccount,
+  },
+});
+
 export const fullWidth = (): StorybookSvelte.Component => ({
   Component: Button,
   props: {
@@ -70,5 +77,15 @@ export const fullWidthWithIconOnRight = (): StorybookSvelte.Component => ({
     icon: mdiArrowRight,
     iconRight: true,
     fullWidth: true,
+  },
+});
+
+export const withImage = (): StorybookSvelte.Component => ({
+  Component: Button,
+  props: {
+    label: 'Click Me',
+    mode: 'secondary',
+    image: '/memory-jar.jpg',
+    imageHeight: 10,
   },
 });

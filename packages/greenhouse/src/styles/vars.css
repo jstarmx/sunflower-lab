@@ -7,6 +7,10 @@
   --unit-x4: calc(var(--unit) * 4);
   --unit-x5: calc(var(--unit) * 5);
   --unit-x6: calc(var(--unit) * 6);
+  --unit-x7: calc(var(--unit) * 7);
+  --unit-x8: calc(var(--unit) * 8);
+  --unit-x9: calc(var(--unit) * 9);
+  --unit-x10: calc(var(--unit) * 10);
 
   /* Colours */
   --white: #fff;

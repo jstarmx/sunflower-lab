@@ -5,7 +5,7 @@ const glob = require('fast-glob');
 const generateEntryFile = () => {
   let output = '';
 
-  const files = glob.sync('./src/**/*.svelte');
+  const files = glob.sync(['./src/**/*.svelte', '!**/*.stories.svelte']);
 
   files.forEach((file) => {
     output += `import ${path.basename(file, '.svelte')} from '${file}';\n`;

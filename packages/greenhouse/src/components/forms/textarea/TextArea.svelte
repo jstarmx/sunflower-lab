@@ -26,7 +26,7 @@
   }
 
   textarea::placeholder {
-    color: var(--primary-light);
+    color: var(--mono);
   }
 </style>
 
