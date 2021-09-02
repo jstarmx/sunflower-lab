@@ -1,13 +1,19 @@
 <script>
   export let title;
+  export let comfySides = false;
 </script>
 
 <style>
-  div {
+  .card {
     border: 1px solid var(--mono-light);
     border-radius: var(--unit-x2);
     text-align: center;
     padding: var(--unit) var(--unit-x3);
+  }
+
+  .card--comfy-sides {
+    padding-left: var(--unit-x10);
+    padding-right: var(--unit-x10);
   }
 
   h2 {
@@ -20,7 +26,7 @@
   }
 </style>
 
-<div>
+<div class="card {comfySides ? 'card--comfy-sides' : ''}">
   <h2>{title}</h2>
   <p><slot /></p>
 </div>
