@@ -1,11 +1,13 @@
 <script lang="ts">
-  import firebase from 'firebase/app';
+  import { getAuth, signOut } from 'firebase/auth';
   import { Icon } from '@sunflower-lab/greenhouse';
   import { mdiAccount } from '@mdi/js';
 
+  const auth = getAuth();
+
   const handleSignOut = async () => {
     try {
-      await firebase.auth().signOut();
+      await signOut(auth);
       window.location.href = '/';
     } catch (err) {
       console.error(err);

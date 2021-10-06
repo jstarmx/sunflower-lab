@@ -7,7 +7,7 @@
   const lovedOneName = $user && $user.name;
   const name = $lovedOne && $lovedOne.name;
 
-  export let auth;
+  export let loggedIn = false;
   export let handleToggleMenu;
   export let menuOpen = false;
 </script>
@@ -57,7 +57,7 @@
 <header>
   <a href="/"><img src="/images/logo-circle.svg" alt="Forget-me-not logo" /></a>
   {#if lovedOneName && name}<button class="help" />{/if}
-  {#if auth}
+  {#if loggedIn}
     <Button
       label={menuOpen ? 'Close' : 'Menu'}
       icon={menuOpen ? mdiClose : mdiMenu}

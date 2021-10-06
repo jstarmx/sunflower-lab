@@ -1,24 +1,36 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import firebase from 'firebase/app';
+  import { initializeApp } from 'firebase/app';
+  import { getAuth, onAuthStateChanged } from 'firebase/auth';
+  import '@sunflower-lab/greenhouse/src/styles/vars.css';
+  import '@sunflower-lab/greenhouse/src/styles/global.css';
 
   import Header from '../components/Header.svelte';
   import Auth from '../components/Auth.svelte';
   import Menu from '../components/Menu.svelte';
 
-  // Workaround to suppress console warning, see https://github.com/sveltejs/sapper/issues/824
-  export let segment;
-  segment = segment;
-
-  let auth = null;
+  let loggedIn = false;
   let loading = true;
 
   onMount(async () => {
-    firebase.auth().onAuthStateChanged((authData) => {
-      if (authData) {
-        auth = authData;
+    const firebaseConfig = {
+      apiKey: 'AIzaSyCTZNcf_NrG3pEQpdat58lCSrbs5fnE2Y8',
+      authDomain: 'forget-me-not-app.firebaseapp.com',
+      databaseURL: 'https://forget-me-not-app.firebaseio.com',
+      projectId: 'forget-me-not-app',
+      storageBucket: 'forget-me-not-app.appspot.com',
+      messagingSenderId: '1039937894418',
+      appId: '1:1039937894418:web:6e21c2018fa7416c6940cb',
+      measurementId: 'G-5RVYT2LC3W',
+    };
+
+    const firebaseApp = initializeApp(firebaseConfig);
+    const auth = getAuth(firebaseApp);
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        loggedIn = true;
       } else {
-        auth = null;
+        loggedIn = false;
       }
       loading = false;
     });
@@ -111,7 +123,7 @@
 </style>
 
 <div class="container">
-  <Header {auth} {handleToggleMenu} />
+  <Header {loggedIn} {handleToggleMenu} />
 
   <main>
     {#if loading}
@@ -121,7 +133,7 @@
       </div>
     {:else if menuOpen}
       <Menu />
-    {:else if auth}
+    {:else if loggedIn}
       <div class="content">
         <slot />
       </div>
