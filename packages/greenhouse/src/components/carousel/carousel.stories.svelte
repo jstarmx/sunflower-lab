@@ -12,19 +12,19 @@
 <Story name="Standard">
   <Carousel>
     <CarouselFrame>
-      <Card title="Some Section">
+      <Card title="Some Section" comfySides>
         <p>Card 1</p>
         <Button label="Do something" />
       </Card>
     </CarouselFrame>
     <CarouselFrame>
-      <Card title="Some Section">
+      <Card title="Some Section" comfySides>
         <p>Card 2</p>
         <Button label="Do something" />
       </Card>
     </CarouselFrame>
     <CarouselFrame>
-      <Card title="Some Section">
+      <Card title="Some Section" comfySides>
         <p>Card 3</p>
         <Button label="Do something" />
       </Card>
