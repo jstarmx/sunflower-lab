@@ -13,7 +13,9 @@
   <Carousel>
     <CarouselFrame>
       <Card title="Some Section" comfySides>
-        <p>Card 1</p>
+        <p>
+          Card 1 - this card has some more text in it to demonstrate wrapping
+        </p>
         <Button label="Do something" />
       </Card>
     </CarouselFrame>

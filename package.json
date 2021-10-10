@@ -28,7 +28,7 @@
     ]
   },
   "resolutions": {
-    "acorn": "8.0.1"
+    "acorn": "8.5.0"
   },
   "devDependencies": {
     "@tsconfig/svelte": "^1.0.10",

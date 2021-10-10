@@ -11,8 +11,13 @@
 
 <style>
   section {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    align-content: start;
+    padding: var(--unit-x5) var(--unit);
+  }
+
+  .intro {
+    padding: 0 var(--unit-x4);
   }
 </style>
 
@@ -22,14 +27,14 @@
 
 <section>
   {#if $lovedOne.name && $user.name}
-    <p>
+    <p class="intro">
       Hi
       {$user.name}, lets talk about
       {$lovedOne.name}.
     </p>
     <Carousel>
       <CarouselFrame>
-        <Card title="Memory jar">
+        <Card title="Memory jar" comfySides>
           <p>
             Add a memory of {$lovedOne.name}, or just have a look through the
             memories you've already added.
@@ -38,7 +43,7 @@
         </Card>
       </CarouselFrame>
       <CarouselFrame>
-        <Card title="Diary">
+        <Card title="Diary" comfySides>
           <p>
             Jot down how you're feeling right now. It can be anything you like.
           </p>
@@ -46,16 +51,6 @@
         </Card>
       </CarouselFrame>
     </Carousel>
-    <!-- <p>
-      You could <a href="#">add a memory of {$lovedOne.name}</a>, or just
-      <a href="#">have a look through the memories you've already added</a>.
-    </p>
-    <p>You could <a href="#">write down how you're feeling</a> right now.</p>
-    <p>
-      Or you could have a look to see where you can <a href="#"
-        >get some more help</a
-      > if you need it.
-    </p> -->
   {:else}
     <Button href="/get-started" label="Get started" />
   {/if}

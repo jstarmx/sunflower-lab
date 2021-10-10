@@ -53,7 +53,6 @@
   .content {
     display: grid;
     height: 100%;
-    padding: var(--unit-x5);
   }
 
   .loader {
@@ -125,20 +124,18 @@
 <div class="container">
   <Header {loggedIn} {handleToggleMenu} />
 
-  <main>
-    {#if loading}
-      <div class="loader">
-        <img src="/images/logo.svg" alt="Forget-me-not logo" />
-        Loading, please wait...
-      </div>
-    {:else if menuOpen}
-      <Menu />
-    {:else if loggedIn}
-      <div class="content">
-        <slot />
-      </div>
-    {:else}
-      <Auth />
-    {/if}
-  </main>
+  {#if loading}
+    <div class="loader">
+      <img src="/images/logo.svg" alt="Forget-me-not logo" />
+      Loading, please wait...
+    </div>
+  {:else if menuOpen}
+    <Menu />
+  {:else if loggedIn}
+    <div class="content">
+      <slot />
+    </div>
+  {:else}
+    <Auth />
+  {/if}
 </div>
