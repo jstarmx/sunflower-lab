@@ -52,6 +52,8 @@
       </CarouselFrame>
     </Carousel>
   {:else}
-    <Button href="/get-started" label="Get started" />
+    <div class="intro">
+      <Button href="/get-started" label="Get started" />
+    </div>
   {/if}
 </section>
