@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "dev": "yarn workspaces foreach -vpi run dev",
-    "lint": "eslint ./ --ext .js,.ts,.svelte"
+    "lint": "eslint ./ --ext .js,.ts,.svelte",
+    "postinstall": "husky install"
   },
   "husky": {
     "hooks": {
@@ -27,9 +28,6 @@
       "prettier --write"
     ]
   },
-  "resolutions": {
-    "acorn": "8.5.0"
-  },
   "devDependencies": {
     "@tsconfig/svelte": "^1.0.10",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
@@ -41,8 +39,8 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-svelte3": "^3.2.0",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.2.3",
     "prettier": "^2.3.1",
     "prettier-plugin-svelte": "^2.3.0",
     "svelte": "^3.37.0",

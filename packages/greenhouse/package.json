@@ -21,6 +21,8 @@
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@mdi/js": "^4.5.95",
+    "@storybook/builder-webpack5": "^6.3.10",
+    "@storybook/manager-webpack5": "^6.3.10",
     "@storybook/svelte": "^6.3.10",
     "@tsconfig/svelte": "^1.0.10",
     "babel-loader": "^8.0.6",
