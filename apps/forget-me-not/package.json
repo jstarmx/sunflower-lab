@@ -16,7 +16,7 @@
     "firebase": "^9.0.2"
   },
   "devDependencies": {
-    "@sunflower-lab/greenhouse": "workspace:packages/greenhouse",
+    "@sunflower-lab/greenhouse": "workspace:*",
     "@sveltejs/adapter-static": "next",
     "@sveltejs/kit": "next",
     "firebase-tools": "^9.19.0",

@@ -5,13 +5,8 @@
   "repository": "git@github.com:jstarmx/sunflower-lab.git",
   "author": "James Starkie <jstar.mx@gmail.com>",
   "license": "MIT",
-  "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
-    "dev": "yarn workspaces foreach -vpi run dev",
+    "dev": "pnpm dev --recursive --parallel",
     "lint": "eslint ./ --ext .js,.ts,.svelte",
     "postinstall": "husky install"
   },

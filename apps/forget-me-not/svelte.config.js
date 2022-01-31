@@ -11,7 +11,6 @@ const config = {
       assets: 'build',
       fallback: null
     }),
-    ssr: false,
   }
 };
 
