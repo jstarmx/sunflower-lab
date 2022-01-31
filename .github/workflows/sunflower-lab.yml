@@ -1,7 +1,7 @@
 name: Sunflower Lab
 
-# on:
-#   push:
+on:
+  push
 #     branches:
 #       - master
 
