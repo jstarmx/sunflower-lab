@@ -1,9 +1,9 @@
 name: Sunflower Lab
 
-on:
-  push:
-    branches:
-      - master
+# on:
+#   push:
+#     branches:
+#       - master
 
 jobs:
   storybook:
@@ -13,14 +13,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-          cache-dependency-path: yarn.lock
+          cache-dependency-path: pnpm-lock.yaml
       - name: install dependencies
         run: |
-          yarn
+          pnpm install
       - name: build storybook
         working-directory: packages/greenhouse
         run: |
-          yarn storybook:build
+          pnpm storybook:build
       - name: deploy to pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
@@ -34,18 +34,18 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-          cache-dependency-path: yarn.lock
+          cache-dependency-path: pnpm-lock.yaml
       - name: Install dependencies
         run: |
-          yarn
+          pnpm install
       - name: Build packages
         working-directory: packages/greenhouse
         run: |
-          yarn build
+          pnpm build
       - name: Build and deploy apps
         working-directory: apps/forget-me-not
         run: |
-          yarn build
-          yarn deploy
+          pnpm build
+          pnpm deploy
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
