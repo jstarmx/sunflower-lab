@@ -2,8 +2,8 @@ name: Sunflower Lab
 
 on:
   push
-#     branches:
-#       - master
+    branches:
+      - master
 
 jobs:
   storybook:
