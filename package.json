@@ -11,12 +11,7 @@
     "postinstall": "husky install"
   },
   "lint-staged": {
-    "*.{js,ts}": [
-      "eslint ./ --fix"
-    ],
-    "*.{json,md,svelte}": [
-      "prettier --write"
-    ]
+    "*": "prettier --write"
   },
   "devDependencies": {
     "@tsconfig/svelte": "^3.0.0",
