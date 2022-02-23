@@ -12,19 +12,19 @@
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "dependencies": {
-    "@mdi/js": "^6.1.95",
-    "firebase": "^9.0.2",
+    "@mdi/js": "^6.5.95",
+    "firebase": "^9.6.7",
     "svelte-gestures": "^1.4.1"
   },
   "devDependencies": {
     "@sunflower-lab/greenhouse": "workspace:*",
     "@sveltejs/adapter-static": "^1.0.0-next.28",
     "@sveltejs/kit": "^1.0.0-next.282",
-    "firebase-tools": "^9.19.0",
+    "firebase-tools": "^10.2.1",
     "svelte": "^3.46.4",
-    "svelte-check": "^2.0.0",
+    "svelte-check": "^2.4.5",
     "svelte-preprocess": "^4.10.3",
-    "tslib": "^2.0.0",
-    "typescript": "^4.5.2"
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5"
   }
 }

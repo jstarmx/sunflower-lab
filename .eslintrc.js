@@ -20,7 +20,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
   },
   parser: '@typescript-eslint/parser',
-  plugins: ['cypress', 'import', 'prettier', 'svelte3', '@typescript-eslint'],
+  plugins: ['cypress', 'import', 'svelte3', '@typescript-eslint'],
   overrides: [
     {
       files: ['*.svelte'],
