@@ -1,8 +1,9 @@
 <script lang="ts">
   import { mdiHome } from '@mdi/js';
   import { Button, Input, TextArea } from '@sunflower-lab/greenhouse';
+  import type { Memory } from '../types';
 
-  import { user, companion, lovedOne, memory } from '../stores';
+  import { user, companion, lovedOne, memories } from '../stores';
 
   let step: number = 1;
 
@@ -13,6 +14,10 @@
   const handleNext = (): void => {
     step += 1;
   };
+
+  const memory: Memory = { title: '', story: '' };
+
+  memories.set([memory]);
 
   const handleYouChoose = (): void => {
     companion.set({ name: 'Sam', randomName: true });
@@ -129,7 +134,7 @@
     <Input
       label="Title"
       placeholder="Enter a title here..."
-      bind:value={$memory.title}
+      bind:value={memory.title}
     />
   {/if}
 
@@ -139,7 +144,7 @@
     <TextArea
       label="Your story"
       placeholder="Enter your story here..."
-      bind:value={$memory.story}
+      bind:value={memory.story}
     />
   {/if}
 

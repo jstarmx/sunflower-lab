@@ -19,6 +19,10 @@
   .intro {
     padding: 0 var(--unit-x4);
   }
+
+  img {
+    max-width: 100%;
+  }
 </style>
 
 <svelte:head>
@@ -35,15 +39,17 @@
     <Carousel>
       <CarouselFrame>
         <Card title="Memory jar" comfySides>
+          <img src="images/memory-jar.jpg" alt="Memory jar" />
           <p>
             Add a memory of {$lovedOne.name}, or just have a look through the
             memories you've already added.
           </p>
-          <Button href="#" label="Go to your memory jar" />
+          <Button href="/memory-jar" label="Go to your memory jar" />
         </Card>
       </CarouselFrame>
       <CarouselFrame>
         <Card title="Diary" comfySides>
+          <img src="images/diary.jpg" alt="Diary" />
           <p>
             Jot down how you're feeling right now. It can be anything you like.
           </p>

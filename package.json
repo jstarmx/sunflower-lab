@@ -11,7 +11,7 @@
     "postinstall": "husky install"
   },
   "lint-staged": {
-    "*": "prettier --write"
+    "*.{js,ts,json,svelte,md}": "prettier --write --plugin-search-dir=."
   },
   "devDependencies": {
     "@tsconfig/svelte": "^3.0.0",

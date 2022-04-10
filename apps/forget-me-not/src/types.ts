@@ -16,6 +16,8 @@ export type Memory = {
   story?: string;
 };
 
+export type Memories = Memory[];
+
 export type JsonValue =
   | string
   | number

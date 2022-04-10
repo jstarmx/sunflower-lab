@@ -1,7 +1,7 @@
 <script>
   import ButtonContent from './ButtonContent.svelte';
 
-  export let label;
+  export let label = '';
   export let mode = 'primary';
   export let href = '';
   export let icon = '';

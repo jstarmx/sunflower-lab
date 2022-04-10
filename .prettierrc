@@ -1,5 +1,6 @@
 {
   "singleQuote": true,
   "trailingComma": "all",
-  "svelteSortOrder": "options-scripts-styles-markup"
+  "svelteSortOrder": "options-scripts-styles-markup",
+  "plugins": ["./node_modules/prettier-plugin-svelte"]
 }

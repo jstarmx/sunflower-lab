@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 
-import type { User, LovedOne, Companion, Memory, JsonValue } from './types';
+import type { User, LovedOne, Companion, Memories, JsonValue } from './types';
 
 const createWritableStore = <T extends JsonValue>(
   model: string,
@@ -35,4 +35,4 @@ const createWritableStore = <T extends JsonValue>(
 export const user = createWritableStore<User>('user', {});
 export const lovedOne = createWritableStore<LovedOne>('lovedOne', {});
 export const companion = createWritableStore<Companion>('companion', {});
-export const memory = createWritableStore<Memory>('memory', {});
+export const memories = createWritableStore<Memories>('memories', []);
