@@ -3,7 +3,7 @@ name: Sunflower Lab
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   storybook:
@@ -30,7 +30,7 @@ jobs:
           branch: gh-pages
           folder: packages/greenhouse/.out
 
-  deploy:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -44,14 +44,12 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm install
-      - name: Build packages
+      - name: Build
         working-directory: packages/greenhouse
         run: |
           pnpm build
-      - name: Build and deploy apps
-        working-directory: apps/forget-me-not
+          pnpm package
+      - name: Publish
+        working-directory: packages/greenhouse/package
         run: |
-          pnpm build
-          pnpm deploy
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          pnpm publish --access public

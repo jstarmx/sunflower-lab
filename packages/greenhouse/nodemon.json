@@ -1,4 +1,4 @@
 {
-  "ignore": ["./index.js", "./types.d.ts"],
+  "ignore": ["./src/lib/index.js", "./src/lib/types.d.ts"],
   "ext": "js,ts,svelte"
 }

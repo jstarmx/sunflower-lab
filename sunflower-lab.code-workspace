@@ -5,10 +5,6 @@
       "path": "."
     },
     {
-      "name": "🚀 @sunflower-lab/forget-me-not",
-      "path": "apps/forget-me-not"
-    },
-    {
       "name": "📦 @sunflower-lab/greenhouse",
       "path": "packages/greenhouse"
     }
