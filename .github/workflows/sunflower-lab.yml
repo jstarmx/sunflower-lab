@@ -49,7 +49,6 @@ jobs:
         run: |
           pnpm build
           pnpm package
-          echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > ~/.npmrc
       - name: Publish
         working-directory: packages/greenhouse/package
         run: |
