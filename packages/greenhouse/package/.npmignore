@@ -1,7 +1,0 @@
-.storybook
-.vscode
-node_modules
-.eslintignore
-.prettierrc
-.prettierignore
-
