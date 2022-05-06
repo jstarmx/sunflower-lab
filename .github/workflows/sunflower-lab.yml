@@ -50,5 +50,6 @@ jobs:
           pnpm build
           pnpm package
           cd package
+          echo $NPM_TOKEN
           npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-          pnpm publish --access public --no-git-checks
+          npm publish --access public
