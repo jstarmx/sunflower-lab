@@ -18,6 +18,10 @@ export interface InputProps {
    * @default "text"
    */
   type?: 'text' | 'number' | 'email' | 'password';
+  /**
+   * An optional error message to display
+   */
+  error?: string;
 }
 
 export default class Input extends SvelteComponentTyped<InputProps> {}

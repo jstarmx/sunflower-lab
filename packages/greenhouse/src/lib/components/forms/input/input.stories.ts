@@ -37,3 +37,12 @@ export const password = (): StorybookSvelte.Component => ({
     type: 'password',
   },
 });
+
+export const withError = (): StorybookSvelte.Component => ({
+  Component: Input,
+  props: {
+    label: 'Required field',
+    placeholder: 'enter value...',
+    error: 'This is a required field',
+  },
+});

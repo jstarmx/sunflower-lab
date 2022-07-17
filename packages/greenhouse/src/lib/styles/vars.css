@@ -37,4 +37,6 @@
   --mono-light: #bbb;
   --mono-dark: #595959;
   --mono-inverse: #595959;
+
+  --error: #ff0000;
 }

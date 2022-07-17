@@ -3,9 +3,14 @@
   export let value = '';
   export let label = '';
   export let type = 'text';
+  export let error = '';
 </script>
 
 <style>
+  div {
+    margin: var(--unit) 0 var(--unit-x2);
+  }
+
   label {
     color: var(--mono-inverse);
   }
@@ -14,9 +19,13 @@
     border-radius: var(--unit-x2);
     border: var(--unit-sm) solid var(--mono-light);
     color: var(--primary-inverse);
-    margin: var(--unit) 0 var(--unit-x2);
+    margin: var(--unit) 0;
     padding: var(--unit-x2) var(--unit-x3);
     width: 100%;
+  }
+
+  input.error {
+    border-color: var(--error);
   }
 
   input:focus {
@@ -28,14 +37,47 @@
   input::placeholder {
     color: var(--mono);
   }
+
+  span {
+    color: var(--error);
+  }
 </style>
 
-{#if type === 'number'}
-  <label>{label}<input {placeholder} type="number" bind:value /> </label>
-{:else if type === 'email'}
-  <label>{label}<input {placeholder} type="email" bind:value /> </label>
-{:else if type === 'password'}
-  <label>{label}<input {placeholder} type="password" bind:value /> </label>
-{:else}
-  <label>{label}<input {placeholder} type="text" bind:value /> </label>
-{/if}
+<div>
+  <!-- svelte-ignore a11y-label-has-associated-control -->
+  <label>
+    {label}
+    {#if type === 'number'}
+      <input
+        class={error ? 'error' : ''}
+        {placeholder}
+        type="number"
+        bind:value
+      />
+    {:else if type === 'email'}
+      <input
+        class={error ? 'error' : ''}
+        {placeholder}
+        type="email"
+        bind:value
+      />
+    {:else if type === 'password'}
+      <input
+        class={error ? 'error' : ''}
+        {placeholder}
+        type="password"
+        bind:value
+      />
+    {:else}
+      <input
+        class={error ? 'error' : ''}
+        {placeholder}
+        type="text"
+        bind:value
+      />
+    {/if}
+  </label>
+  {#if error}
+    <span>{error}</span>
+  {/if}
+</div>
