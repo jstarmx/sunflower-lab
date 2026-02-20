@@ -32,5 +32,5 @@
 
 <label
   >{label}
-  <textarea {placeholder} {rows} bind:value />
+  <textarea {placeholder} {rows} bind:value></textarea>
 </label>

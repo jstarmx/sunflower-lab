@@ -5,7 +5,7 @@
 <script>
   import { setContext, onDestroy } from 'svelte';
   import { writable } from 'svelte/store';
-  import { swipe } from 'svelte-gestures';
+  import { useSwipe } from 'svelte-gestures';
   import { mdiChevronLeft, mdiChevronRight } from '@mdi/js';
 
   import Button from '../button/Button.svelte';
@@ -91,7 +91,9 @@
     border-radius: 50%;
     background-color: var(--secondary-dark);
     margin: 0 var(--unit-sm);
-    transition: width 250ms ease-out, opacity 250ms ease-out;
+    transition:
+      width 250ms ease-out,
+      opacity 250ms ease-out;
     opacity: 0.5;
   }
 
@@ -105,7 +107,7 @@
 <div class="carousel">
   <div
     class="carousel__frames"
-    use:swipe={{ timeframe: 300, minSwipeDistance: 60 }}
+    use:useSwipe={{ timeframe: 300, minSwipeDistance: 60 }}
     on:swipe={onSwipe}
     style="transform: translateX(-{$selectedFrameIndex * 100}%);"
   >
@@ -120,11 +122,11 @@
 </div>
 
 <div class="indicators">
-  {#each frames as frame, index}
+  {#each frames as _frame, index (index)}
     <span
       class="indicator {$selectedFrameIndex === index
         ? 'indicator--active'
         : ''}"
-    />
+    ></span>
   {/each}
 </div>

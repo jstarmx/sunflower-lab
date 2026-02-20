@@ -11,6 +11,7 @@
   export let iconRight = false;
   export let fullWidth = false;
   export let snug = false;
+  export let onclick;
 
   let classModifer =
     mode === 'secondary' ? 'button--secondary' : 'button--primary';
@@ -82,11 +83,11 @@
 </style>
 
 {#if href}
-  <a {href} class="button {classModifer}">
+  <a {href} class="button {classModifer}" on:click={onclick}>
     <ButtonContent {icon} {label} {image} {imageHeight} />
   </a>
 {:else}
-  <button {type} class="button {classModifer}" on:click>
+  <button {type} class="button {classModifer}" on:click={onclick} on:click>
     <ButtonContent {icon} {label} {image} {imageHeight} />
   </button>
 {/if}

@@ -44,7 +44,6 @@
 </style>
 
 <div>
-  <!-- svelte-ignore a11y-label-has-associated-control -->
   <label>
     {label}
     {#if type === 'number'}

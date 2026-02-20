@@ -1,33 +1,38 @@
 {
   "name": "sunflower-lab",
   "version": "0.0.1",
+  "type": "module",
   "main": "index.js",
   "repository": "git@github.com:jstarmx/sunflower-lab.git",
   "author": "James Starkie <jstar.mx@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "pnpm dev --recursive --parallel",
-    "lint": "eslint ./ --ext .js,.ts,.svelte",
-    "postinstall": "husky install"
+    "lint": "eslint .",
+    "postinstall": "husky"
   },
   "lint-staged": {
-    "*.{js,ts,json,svelte,md}": "prettier --write --plugin-search-dir=."
+    "*.{js,ts,json,svelte,md}": "prettier --write"
   },
   "devDependencies": {
-    "@tsconfig/svelte": "^3.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.12.1",
-    "@typescript-eslint/parser": "^5.12.1",
-    "eslint": "^8.9.0",
+    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/js": "^10.0.1",
+    "@tsconfig/svelte": "^5.0.8",
+    "@typescript-eslint/eslint-plugin": "^8.56.0",
+    "@typescript-eslint/parser": "^8.56.0",
+    "eslint": "^10.0.1",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.4.0",
-    "eslint-plugin-cypress": "^2.12.1",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-svelte3": "^3.4.0",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.3.4",
-    "prettier": "^2.5.1",
-    "prettier-plugin-svelte": "^2.6.0",
-    "svelte": "^3.46.4",
-    "typescript": "^4.5.5"
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-cypress": "^6.1.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-svelte": "^3.15.0",
+    "globals": "^17.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.8.1",
+    "prettier-plugin-svelte": "^3.5.0",
+    "svelte": "^5.53.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.0"
   }
 }

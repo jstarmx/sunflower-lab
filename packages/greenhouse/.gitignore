@@ -1,3 +1,4 @@
-.out
-index.js
-package
+dist
+.svelte-kit
+.storybook
+storybook-static

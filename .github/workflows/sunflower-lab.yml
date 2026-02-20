@@ -4,52 +4,76 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  storybook:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
         with:
-          node-version: '14'
-          cache-dependency-path: pnpm-lock.yaml
-      - uses: pnpm/action-setup@v2.1.0
+          version: 10
+      - uses: actions/setup-node@v4
         with:
-          version: 6.0.2
+          node-version: '22'
+          cache: 'pnpm'
       - name: install dependencies
-        run: |
-          pnpm install
+        run: pnpm install
+      - name: lint
+        run: pnpm lint
+      - name: test
+        run: pnpm test
+
+  storybook:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+      - name: install dependencies
+        run: pnpm install
       - name: build storybook
         working-directory: packages/greenhouse
-        run: |
-          pnpm storybook:build
+        run: pnpm storybook:build
       - name: deploy to pages
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: packages/greenhouse/.out
+          folder: packages/greenhouse/storybook-static
 
   publish:
     runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
         with:
-          node-version: '14'
-          cache-dependency-path: pnpm-lock.yaml
-      - uses: pnpm/action-setup@v2.1.0
+          version: 10
+      - uses: actions/setup-node@v4
         with:
-          version: 6.0.2
-      - name: Install dependencies
-        run: |
-          pnpm install
-      - name: Build
+          node-version: '22'
+          cache: 'pnpm'
+      - name: install dependencies
+        run: pnpm install
+      - name: build and package
         working-directory: packages/greenhouse
         run: |
           pnpm build
           pnpm package
-          cd package
+      - name: publish
+        working-directory: packages/greenhouse/dist
+        run: |
           npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
           pnpm publish --access public --no-git-checks
         env:

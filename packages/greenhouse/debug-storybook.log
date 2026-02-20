@@ -1,0 +1,21 @@
+[19:18:08.845] [INFO] storybook v10.2.10
+[19:18:09.554] [DEBUG] Getting package.json info for /Users/james/code/personal/sunflower-lab/packages/greenhouse/package.json...
+[19:18:10.150] [INFO] Starting...
+[19:18:10.256] [DEBUG] Starting preview..
+[19:18:10.284] [ERROR] Failed to build the preview
+[19:18:10.284] [ERROR] file:///Users/james/code/personal/sunflower-lab/node_modules/.pnpm/@sveltejs+vite-plugin-svelte@6.2.4_svelte@5.53.0_vite@7.3.1_@types+node@25.3.0_sass@1.97.3_terser@5.46.0_yaml@2.8.2_/node_modules/@sveltejs/vite-plugin-svelte/src/utils/log.js:4
+import { styleText } from 'node:util';
+         ^^^^^^^^^
+[38;2;241;97;97mSyntaxError: The requested module 'node:util' does not provide an export named 'styleText'[39m
+    at ModuleJob._instantiate (node:internal/modules/esm/module_job:132:21)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:214:5)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)
+    at async loadConfigFromBundledFile (file:///Users/james/code/personal/sunflower-lab/node_modules/.pnpm/vite@7.3.1_@types+node@25.3.0_sass@1.97.3_terser@5.46.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js:35909:12)
+    at async bundleAndLoadConfigFile (file:///Users/james/code/personal/sunflower-lab/node_modules/.pnpm/vite@7.3.1_@types+node@25.3.0_sass@1.97.3_terser@5.46.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js:35797:17)
+    at async loadConfigFromFile (file:///Users/james/code/personal/sunflower-lab/node_modules/.pnpm/vite@7.3.1_@types+node@25.3.0_sass@1.97.3_terser@5.46.0_yaml@2.8.2/node_modules/vite/dist/node/chunks/config.js:35764:42)
+    at async commonConfig (file:///Users/james/code/personal/sunflower-lab/node_modules/.pnpm/@storybook+builder-vite@10.2.10_esbuild@0.27.3_rollup@4.58.0_storybook@10.2.10_@testing_1605a80fff2ff9e24d8dd8019906f648/node_modules/@storybook/builder-vite/dist/index.js:1632:340)
+    at async createViteServer (file:///Users/james/code/personal/sunflower-lab/node_modules/.pnpm/@storybook+builder-vite@10.2.10_esbuild@0.27.3_rollup@4.58.0_storybook@10.2.10_@testing_1605a80fff2ff9e24d8dd8019906f648/node_modules/@storybook/builder-vite/dist/index.js:1874:42)
+    at async Module.start (file:///Users/james/code/personal/sunflower-lab/node_modules/.pnpm/@storybook+builder-vite@10.2.10_esbuild@0.27.3_rollup@4.58.0_storybook@10.2.10_@testing_1605a80fff2ff9e24d8dd8019906f648/node_modules/@storybook/builder-vite/dist/index.js:1923:17)
+    at async storybookDevServer (file:///Users/james/code/personal/sunflower-lab/node_modules/.pnpm/storybook@10.2.10_@testing-library+dom@10.4.1_prettier@3.8.1_react-dom@16.14.0_react@16.14.0__react@16.14.0/node_modules/storybook/dist/core-server/index.js:7241:83)
+[19:18:10.289] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.
