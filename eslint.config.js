@@ -20,9 +20,9 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   ...svelte.configs['flat/recommended'],
-  prettier,
   cypress.configs.recommended,
   ...compat.extends('airbnb-base'),
+  prettier,
   {
     languageOptions: {
       globals: {
