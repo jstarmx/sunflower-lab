@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "pnpm dev --recursive --parallel",
     "lint": "eslint .",
+    "test": "pnpm -r test",
     "postinstall": "husky"
   },
   "lint-staged": {
