@@ -67,7 +67,6 @@ jobs:
         with:
           node-version: '22'
           cache: 'pnpm'
-          registry-url: 'https://registry.npmjs.org'
       - name: install dependencies
         run: pnpm install
       - name: build and package
@@ -78,5 +77,3 @@ jobs:
       - name: publish
         working-directory: packages/greenhouse/dist
         run: pnpm publish --access public --no-git-checks --provenance
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # actions/setup-node uses this for OIDC if configured
