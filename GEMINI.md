@@ -8,6 +8,7 @@ This document tracks the foundational architectural decisions and technical requ
   - _Rationale:_ Required for `node:util` `styleText` compatibility used by ESLint 10 and Storybook 10.
 - **Package Manager:** `pnpm` v10.x.
   - _Security:_ Transitive vulnerabilities are managed via `pnpm.overrides` in the root `package.json`.
+    - _Note:_ `minimatch` is kept at v3 for compatibility with `@eslint/eslintrc`. Forcing v10+ crashes the linter due to export mismatches.
 - **Module System:** Strict ESM (`"type": "module"` in `package.json`).
 
 ## 🏗 Core Architecture

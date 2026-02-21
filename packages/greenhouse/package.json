@@ -1,6 +1,6 @@
 {
   "name": "@sunflower-lab/greenhouse",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "scripts": {
     "dev": "nodemon ./scripts/build.cjs",
     "build": "node ./scripts/build.cjs",
