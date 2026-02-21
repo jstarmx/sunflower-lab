@@ -11,7 +11,11 @@
   },
   "license": "MIT",
   "type": "module",
-  "repository": "git://github.com/jstarmx/sunflower-lab",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jstarmx/sunflower-lab.git",
+    "directory": "packages/greenhouse"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
