@@ -7,6 +7,7 @@ This document tracks the foundational architectural decisions and technical requ
 - **Node.js:** `v22.22.0` (LTS) or higher.
   - _Rationale:_ Required for `node:util` `styleText` compatibility used by ESLint 10 and Storybook 10.
 - **Package Manager:** `pnpm` v10.x.
+  - _Security:_ Transitive vulnerabilities are managed via `pnpm.overrides` in the root `package.json`.
 - **Module System:** Strict ESM (`"type": "module"` in `package.json`).
 
 ## 🏗 Core Architecture

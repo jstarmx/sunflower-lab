@@ -1,2 +1,6 @@
 packages:
-  - 'packages/**'
+  - packages/**
+
+overrides:
+  cookie@<0.7.0: '>=0.7.0'
+  minimatch@<10.2.1: '>=10.2.1'
