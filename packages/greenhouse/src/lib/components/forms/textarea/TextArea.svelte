@@ -1,8 +1,12 @@
 <script>
-  export let placeholder = '';
-  export let label = '';
-  export let value = '';
-  export let rows = 6;
+  /* eslint-disable prefer-const */
+  let {
+    value = $bindable(''),
+    placeholder = '',
+    label = '',
+    rows = 6,
+  } = $props();
+  /* eslint-enable prefer-const */
 </script>
 
 <style>

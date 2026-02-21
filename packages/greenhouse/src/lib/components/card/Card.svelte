@@ -1,6 +1,5 @@
 <script>
-  export let title;
-  export let comfySides = false;
+  const { title, comfySides = false, children = undefined } = $props();
 </script>
 
 <style>
@@ -28,5 +27,5 @@
 
 <div class="card {comfySides ? 'card--comfy-sides' : ''}">
   <h2>{title}</h2>
-  <p><slot /></p>
+  <p>{@render children?.()}</p>
 </div>

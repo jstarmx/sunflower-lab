@@ -2,6 +2,8 @@
   import { getContext } from 'svelte';
   import { FRAMES } from './Carousel.svelte';
 
+  const { children } = $props();
+
   const frame = {};
   const { registerFrame } = getContext(FRAMES);
 
@@ -17,5 +19,5 @@
 </style>
 
 <article>
-  <slot />
+  {@render children?.()}
 </article>

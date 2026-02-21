@@ -1,4 +1,7 @@
 {
   "extends": "@tsconfig/svelte",
-  "include": ["src/lib/**/*"]
+  "compilerOptions": {
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
+  },
+  "include": ["src/**/*"]
 }

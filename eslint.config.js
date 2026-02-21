@@ -62,6 +62,7 @@ export default tseslint.config(
       'import/no-unresolved': 'off',
       'import/no-extraneous-dependencies': 'off',
       'import/prefer-default-export': 'off',
+      'import/order': 'off',
       'lines-between-class-members': 'off',
       'no-console': 'off',
       'no-restricted-globals': 'off',

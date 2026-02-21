@@ -1,9 +1,13 @@
 <script>
-  export let placeholder = '';
-  export let value = '';
-  export let label = '';
-  export let type = 'text';
-  export let error = '';
+  /* eslint-disable prefer-const */
+  let {
+    value = $bindable(''),
+    placeholder = '',
+    label = '',
+    type = 'text',
+    error = '',
+  } = $props();
+  /* eslint-enable prefer-const */
 </script>
 
 <style>

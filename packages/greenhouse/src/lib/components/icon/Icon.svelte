@@ -1,6 +1,5 @@
 <script>
-  export let path;
-  export let background = '';
+  const { path, background = '' } = $props();
 </script>
 
 <style>

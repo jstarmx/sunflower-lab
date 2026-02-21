@@ -1,10 +1,7 @@
 <script>
   import Icon from '../icon/Icon.svelte';
 
-  export let label;
-  export let icon;
-  export let image;
-  export let imageHeight;
+  const { label, icon, image, imageHeight } = $props();
 </script>
 
 <style>

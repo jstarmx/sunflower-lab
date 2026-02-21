@@ -1,32 +1,38 @@
 <script>
   import ButtonContent from './ButtonContent.svelte';
 
-  export let label = '';
-  export let mode = 'primary';
-  export let href = '';
-  export let icon = '';
-  export let image = '';
-  export let imageHeight = 4;
-  export let type = 'submit';
-  export let iconRight = false;
-  export let fullWidth = false;
-  export let snug = false;
-  export let onclick;
+  const {
+    label = '',
+    mode = 'primary',
+    href = '',
+    icon = '',
+    image = '',
+    imageHeight = 4,
+    type = 'submit',
+    iconRight = false,
+    fullWidth = false,
+    snug = false,
+    onclick,
+  } = $props();
 
-  let classModifer =
-    mode === 'secondary' ? 'button--secondary' : 'button--primary';
+  const classModifer = $derived.by(() => {
+    let modifier =
+      mode === 'secondary' ? 'button--secondary' : 'button--primary';
 
-  if (iconRight) {
-    classModifer += ' button--icon-to-right';
-  }
+    if (iconRight) {
+      modifier += ' button--icon-to-right';
+    }
 
-  if (fullWidth) {
-    classModifer += ' button--full-width';
-  }
+    if (fullWidth) {
+      modifier += ' button--full-width';
+    }
 
-  if (snug) {
-    classModifer += ' button--snug';
-  }
+    if (snug) {
+      modifier += ' button--snug';
+    }
+
+    return modifier;
+  });
 </script>
 
 <style>
@@ -83,11 +89,11 @@
 </style>
 
 {#if href}
-  <a {href} class="button {classModifer}" on:click={onclick}>
+  <a {href} class="button {classModifer}" {onclick}>
     <ButtonContent {icon} {label} {image} {imageHeight} />
   </a>
 {:else}
-  <button {type} class="button {classModifer}" on:click={onclick} on:click>
+  <button {type} class="button {classModifer}" {onclick}>
     <ButtonContent {icon} {label} {image} {imageHeight} />
   </button>
 {/if}
