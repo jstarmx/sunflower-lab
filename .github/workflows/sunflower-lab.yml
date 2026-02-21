@@ -69,6 +69,8 @@ jobs:
           cache: 'pnpm'
       - name: install dependencies
         run: pnpm install
+      - name: upgrade npm for OIDC support
+        run: npm install -g npm@latest
       - name: build and package
         working-directory: packages/greenhouse
         run: |
