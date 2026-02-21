@@ -10,6 +10,8 @@ on:
 
 jobs:
   test:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,6 +30,8 @@ jobs:
         run: pnpm test
 
   storybook:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     needs: test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
