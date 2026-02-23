@@ -65,6 +65,7 @@
     transform: translateX(0);
     transition: transform 250ms ease-out;
     width: 100%;
+    height: 100%;
   }
 
   .button {
