@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/svelte';
 import { describe, it, expect } from 'vitest';
+import { axe } from 'vitest-axe';
 import Input from './Input.svelte';
 
 describe('Input', () => {
@@ -41,5 +42,14 @@ describe('Input', () => {
 
     render(Input, { type: 'number', label: 'Num' });
     expect(screen.getByLabelText(/Num/i)).toHaveAttribute('type', 'number');
+  });
+
+  it('should have no accessibility violations', async () => {
+    const { container } = render(Input, {
+      label: 'Accessible Input',
+      placeholder: 'Enter text',
+    });
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

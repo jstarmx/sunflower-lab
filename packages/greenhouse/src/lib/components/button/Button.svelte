@@ -12,6 +12,7 @@
     iconRight = false,
     fullWidth = false,
     snug = false,
+    ariaLabel = '',
     onclick,
   } = $props();
 
@@ -89,11 +90,21 @@
 </style>
 
 {#if href}
-  <a {href} class="button {classModifer}" {onclick}>
+  <a
+    {href}
+    aria-label={ariaLabel || label || null}
+    class="button {classModifer}"
+    {onclick}
+  >
     <ButtonContent {icon} {label} {image} {imageHeight} />
   </a>
 {:else}
-  <button {type} class="button {classModifer}" {onclick}>
+  <button
+    {type}
+    aria-label={ariaLabel || label || null}
+    class="button {classModifer}"
+    {onclick}
+  >
     <ButtonContent {icon} {label} {image} {imageHeight} />
   </button>
 {/if}

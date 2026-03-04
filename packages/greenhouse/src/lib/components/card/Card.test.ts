@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/svelte';
 import { describe, it, expect } from 'vitest';
+import { axe } from 'vitest-axe';
 import Card from './Card.svelte';
 import { createRawSnippet } from 'svelte';
 
@@ -30,8 +31,12 @@ describe('Card', () => {
       },
     });
 
-    // Note: Svelte 5 maps <slot /> to the 'children' prop by default.
-    // If the component is still using <slot />, Svelte 5 internal transformation
-    // might expect it this way.
+    // Svelte 5 maps <slot /> to the 'children' prop by default.
+  });
+
+  it('should have no accessibility violations', async () => {
+    const { container } = render(Card, { title: 'Accessible Card' });
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

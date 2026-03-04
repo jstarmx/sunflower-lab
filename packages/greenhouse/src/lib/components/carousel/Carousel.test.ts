@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/svelte';
 import { describe, it, expect } from 'vitest';
+import { axe } from 'vitest-axe';
 import CarouselTest from './CarouselTest.svelte';
 
 describe('Carousel', () => {
@@ -43,5 +44,11 @@ describe('Carousel', () => {
     const indicators = container.querySelectorAll('.indicator');
     // From 0 to 2 (last)
     expect(indicators[2]).toHaveClass('indicator--active');
+  });
+
+  it('should have no accessibility violations', async () => {
+    const { container } = render(CarouselTest);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

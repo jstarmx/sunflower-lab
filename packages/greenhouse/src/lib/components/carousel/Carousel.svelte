@@ -120,10 +120,22 @@
     {@render children?.()}
   </div>
   <span class="button">
-    <Button onclick={prev} icon={mdiChevronLeft} snug mode="secondary" />
+    <Button
+      onclick={prev}
+      ariaLabel="Previous frame"
+      icon={mdiChevronLeft}
+      snug
+      mode="secondary"
+    />
   </span>
   <span class="button button--next">
-    <Button onclick={next} icon={mdiChevronRight} snug mode="secondary" />
+    <Button
+      onclick={next}
+      ariaLabel="Next frame"
+      icon={mdiChevronRight}
+      snug
+      mode="secondary"
+    />
   </span>
 </div>
 

@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/svelte';
 import { describe, it, expect } from 'vitest';
+import { axe } from 'vitest-axe';
 import TextArea from './TextArea.svelte';
 
 describe('TextArea', () => {
@@ -22,5 +23,14 @@ describe('TextArea', () => {
     render(TextArea, { rows: 10 });
     const textarea = screen.getByRole('textbox');
     expect(textarea).toHaveAttribute('rows', '10');
+  });
+
+  it('should have no accessibility violations', async () => {
+    const { container } = render(TextArea, {
+      label: 'Accessible TextArea',
+      placeholder: 'Enter text',
+    });
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

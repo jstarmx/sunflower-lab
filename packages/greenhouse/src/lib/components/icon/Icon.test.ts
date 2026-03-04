@@ -1,5 +1,6 @@
 import { render } from '@testing-library/svelte';
 import { describe, it, expect } from 'vitest';
+import { axe } from 'vitest-axe';
 import Icon from './Icon.svelte';
 
 describe('Icon', () => {
@@ -30,5 +31,11 @@ describe('Icon', () => {
     const { container } = render(Icon, { path: '...' });
     const span = container.querySelector('span');
     expect(span).not.toHaveClass('circle');
+  });
+
+  it('should have no accessibility violations', async () => {
+    const { container } = render(Icon, { path: 'M10 10h10v10h-10z' });
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

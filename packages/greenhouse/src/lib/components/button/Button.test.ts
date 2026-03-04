@@ -1,24 +1,33 @@
 import { render, screen, fireEvent } from '@testing-library/svelte';
 import { describe, it, expect, vi } from 'vitest';
+import { axe } from 'vitest-axe';
 import Button from './Button.svelte';
 
 describe('Button', () => {
   it('renders a button with a label', () => {
-    render(Button, { label: 'Click Me' });
+    render(Button, { label: 'Click Me', onclick: () => {} });
     const button = screen.getByRole('button');
     expect(button).toBeInTheDocument();
     expect(button).toHaveTextContent('Click Me');
   });
 
   it('renders as a link when href is provided', () => {
-    render(Button, { label: 'Link', href: 'https://google.com' });
+    render(Button, {
+      label: 'Link',
+      href: 'https://google.com',
+      onclick: () => {},
+    });
     const link = screen.getByRole('link');
     expect(link).toBeInTheDocument();
     expect(link).toHaveAttribute('href', 'https://google.com');
   });
 
   it('applies the correct class for secondary mode', () => {
-    render(Button, { label: 'Secondary', mode: 'secondary' });
+    render(Button, {
+      label: 'Secondary',
+      mode: 'secondary',
+      onclick: () => {},
+    });
     const button = screen.getByRole('button');
     expect(button).toHaveClass('button--secondary');
   });
@@ -31,5 +40,14 @@ describe('Button', () => {
     await fireEvent.click(button);
 
     expect(handleClick).toHaveBeenCalled();
+  });
+
+  it('should have no accessibility violations', async () => {
+    const { container } = render(Button, {
+      label: 'Accessible Button',
+      onclick: () => {},
+    });
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

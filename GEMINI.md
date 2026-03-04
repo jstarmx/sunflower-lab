@@ -37,6 +37,7 @@ This document tracks the foundational architectural decisions and technical requ
   - Tests are located alongside components: `src/**/*.test.ts`.
   - Configuration requires `browser` conditions in `vite.config.js` to ensure client-side Svelte build.
   - Slot testing uses `createRawSnippet` or wrapper components.
+  - **Accessibility (AAA strict):** All components MUST be tested using `vitest-axe` with the `toHaveNoViolations` assertion (e.g. `expect(await axe(container)).toHaveNoViolations();`).
 
 ## 📦 Component Conventions
 
@@ -54,3 +55,10 @@ This document tracks the foundational architectural decisions and technical requ
 - **Packaging:** Uses `@sveltejs/package`.
   - `package.json` must define `exports`, `main`, `types`, and include `dist` in `files`.
   - Publishing is done from the package root (e.g., `packages/greenhouse`), NOT the `dist` folder.
+
+## 🤖 Agent Personas
+
+- **Dev Agent (`dev`)**: Focuses on feature development, component creation, and adherence to Svelte 5 Runes architecture and existing module systems.
+- **Docs Agent (`docs`)**: Responsible for writing clear documentation, ensuring TS/CSF Storybook stories stay aligned with Svelte 5 components, and documenting package structures.
+- **Test Agent (`test`)**: Focuses exclusively on unit and integration testing via Vitest + Svelte Testing Library (v5). Responsible for creating wrapper components for snippet testing.
+- **Lint Agent (`lint`)**: Enforces ESLint 10 (Flat Config) and Prettier configurations. Fixes formatting, import paths, and specific TypeScript requirements.
