@@ -16,25 +16,25 @@
     "*.{js,ts,json,svelte,md}": "prettier --write"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/eslintrc": "^3.3.7",
     "@eslint/js": "^10.0.1",
     "@tsconfig/svelte": "^5.0.8",
-    "@typescript-eslint/eslint-plugin": "^8.56.0",
-    "@typescript-eslint/parser": "^8.56.0",
-    "eslint": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.70.0",
+    "@typescript-eslint/parser": "^8.70.0",
+    "eslint": "^10.11.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-cypress": "^6.1.0",
+    "eslint-plugin-cypress": "^7.0.2",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-svelte": "^3.15.0",
-    "globals": "^17.3.0",
+    "eslint-plugin-svelte": "^3.23.0",
+    "globals": "^17.12.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
-    "prettier": "^3.8.1",
-    "prettier-plugin-svelte": "^3.5.0",
-    "svelte": "^5.53.0",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.56.0"
+    "lint-staged": "^17.5.1",
+    "prettier": "^3.9.8",
+    "prettier-plugin-svelte": "^4.1.1",
+    "svelte": "^5.57.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.0"
   },
   "pnpm": {
     "overrides": {
